@@ -15,5 +15,6 @@ namespace WebEnterprise.Models
         public int commentId { get; set; }
         public int postId { get; set; }
         public int userId { get; set; }
+        public string commentBody { get; set; }
     }
 }

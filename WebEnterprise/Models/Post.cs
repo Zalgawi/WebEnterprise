@@ -14,6 +14,7 @@ namespace WebEnterprise.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int postId { get; set; }
         public int userId { get; set; }
+        public string postBody { get; set; }
         public string postDescription { get; set; }
         public string postCategory { get; set; }
 
