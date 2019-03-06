@@ -7,17 +7,13 @@ using System.Web;
 
 namespace WebEnterprise.Models
 {
-    public class Post
+    public class Comment
     {
-        //The post ID
+        //The Comment ID
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int commentId { get; set; }
         public int postId { get; set; }
         public int userId { get; set; }
-        public string postDescription { get; set; }
-        public string postCategory { get; set; }
-
-        
-
     }
 }
