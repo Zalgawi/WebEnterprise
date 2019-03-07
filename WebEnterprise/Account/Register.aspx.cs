@@ -15,7 +15,7 @@ namespace WebEnterprise.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, isVerified = false,  };
+            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, isVerified = false, deptId = deptName.SelectedIndex };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {

@@ -39,6 +39,8 @@ namespace WebEnterprise.Models
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
+
+       
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

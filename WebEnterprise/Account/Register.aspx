@@ -37,6 +37,20 @@
             </div>
         </div>
         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="deptName" CssClass="col-md-2 control-label">Set Department</asp:Label>
+            <div class="col-md-10">
+                <asp:DropDownList ID="deptName" runat="server">
+                    <asp:ListItem Text="Select Department" Value="-1">Select Department</asp:ListItem>
+                    <asp:ListItem Text="Computing" Value="1">Computing</asp:ListItem>
+                    <asp:ListItem Text="Humanities" Value="2">Humanities</asp:ListItem>
+                    <asp:ListItem Text="Music" Value="3">Music</asp:ListItem>
+                    <asp:ListItem Text="Medicine" Value="4">Medicine</asp:ListItem>
+                    <asp:ListItem Text="Business" Value="5">Business</asp:ListItem>
+                </asp:DropDownList>
+                                
+                               </div>
+        </div>
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
