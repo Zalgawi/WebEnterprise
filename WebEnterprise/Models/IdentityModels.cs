@@ -19,7 +19,7 @@ namespace WebEnterprise.Models
 
         public ICollection<ApplicationUser> ApplicationUsers { get; set; }
 
-        public string isVerified { get; set; }
+        public bool isVerified { get; set; }
         // Foreign key to customer
         [ForeignKey("Department")]
         public int deptId { get; set; }
