@@ -379,6 +379,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903080018151_updateRoles.cs" />
+    <Compile Include="Migrations\201903080018151_updateRoles.Designer.cs">
+      <DependentUpon>201903080018151_updateRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -412,7 +417,6 @@
     <Folder Include="App_Data\forumicons\" />
     <Folder Include="App_Data\forumuploadfiles\" />
     <Folder Include="forum\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -424,6 +428,11 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903080018151_updateRoles.resx">
+      <DependentUpon>201903080018151_updateRoles.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
