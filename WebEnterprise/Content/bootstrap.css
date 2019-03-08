@@ -38,6 +38,14 @@ summary {
     display: block;
 }
 
+#DepartmentTable {
+    border-collapse: collapse;
+}
+
+#DepartmentTable, td, th #DepartmentTable {
+    border: 1px solid black;
+} 
+
 audio,
 canvas,
 progress,
