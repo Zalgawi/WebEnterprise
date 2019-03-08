@@ -40,8 +40,9 @@ namespace WebEnterprise.Migrations
                 }
             }
 
+            //After .AddToRole insert the ("UserId", "UserRole ");
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            UserManager.AddToRole("97cb250d-b4b0-43cd-8888-cee206659085", "Admin");
+            UserManager.AddToRole("c1d97ec4-91e8-4ab9-975f-952ede444a7f", "Admin");
 
         }
     }

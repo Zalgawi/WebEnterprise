@@ -15,10 +15,24 @@ namespace WebEnterprise.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, isVerified = false, deptId = deptName.SelectedIndex };
+
+            var user = new ApplicationUser()
+            {
+                UserName = Email.Text,
+                Email = Email.Text,
+                isVerified = false,
+                deptId = deptName.SelectedIndex
+            };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
+                //var currentUser = UserManager.FindByName(user.UserName);
+
+                //var roleresult = UserManager.AddToRole(currentUser.Id, "Superusers");
+
+
+                manager.AddToRole(user.Id, "Staff");
+
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 //string code = manager.GenerateEmailConfirmationToken(user.Id);
                 //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);

@@ -65,6 +65,8 @@ namespace WebEnterprise.Account
                     var result = manager.AddLogin(User.Identity.GetUserId(), verifiedloginInfo.Login);
                     if (result.Succeeded)
                     {
+                        manager.AddToRole(user.Id, "Staff");
+
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                     }
                     else

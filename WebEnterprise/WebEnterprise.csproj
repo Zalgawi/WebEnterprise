@@ -383,6 +383,10 @@
     <Compile Include="Migrations\201903080018151_updateRoles.Designer.cs">
       <DependentUpon>201903080018151_updateRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903081446430_setRoleUponRegistration.cs" />
+    <Compile Include="Migrations\201903081446430_setRoleUponRegistration.Designer.cs">
+      <DependentUpon>201903081446430_setRoleUponRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -432,6 +436,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903080018151_updateRoles.resx">
       <DependentUpon>201903080018151_updateRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903081446430_setRoleUponRegistration.resx">
+      <DependentUpon>201903081446430_setRoleUponRegistration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
