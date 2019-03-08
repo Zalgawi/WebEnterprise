@@ -29,6 +29,7 @@ namespace WebEnterprise.Migrations
             //    new IdentityRole { Name = "Staff" }
             //    );
 
+            //The following code adds the roles to the AspNetRoles database.
             var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             string[] roleNames = { "Admin", "QACoordinator", "QAManager", "Staff" };
             IdentityResult roleResult;
