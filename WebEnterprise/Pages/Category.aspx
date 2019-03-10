@@ -1,12 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DepartmentSelectForum.aspx.cs" Inherits="WebEnterprise.Pages.DepartmentSelectForum" %>
+﻿<%@ Page Title="Category" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="WebEnterprise.Category" %>
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <h2 class="text-center">Select Department</h2>
-    <h3 class="text-center">You may only access a department that you are a part of.</h3>
-    <h4 class="text-center">(If there are any issues, please get in touch with the administration)</h4>
 
-    <div  class="jumbotron">
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>Category</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" media="screen" href="Category.css" />
+        </head>
+        <body>
 
-        <table class="table table-hover">
+            <div class="jumbotron">
+
+
+             <table class="table table-hover">
   <thead>
     <tr class="table-primary">
       <th scope="col">Departments</th>
@@ -43,6 +53,11 @@
   </tbody>
 </table>
 
-        </div>
+            </div>
+
+        </body>
+    </html>
+
+   
 
 </asp:Content>

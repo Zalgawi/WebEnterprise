@@ -202,6 +202,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="App_Data\FORUM.mdf.orig" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Pages\Category.aspx" />
     <Content Include="Pages\DepartmentSelectForum.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -380,19 +381,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903080018151_updateRoles.cs" />
-    <Compile Include="Migrations\201903080018151_updateRoles.Designer.cs">
-      <DependentUpon>201903080018151_updateRoles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903081446430_setRoleUponRegistration.cs" />
-    <Compile Include="Migrations\201903081446430_setRoleUponRegistration.Designer.cs">
-      <DependentUpon>201903081446430_setRoleUponRegistration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Pages\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DepartmentSelectForum.aspx.cs">
       <DependentUpon>DepartmentSelectForum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -440,14 +440,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903080018151_updateRoles.resx">
-      <DependentUpon>201903080018151_updateRoles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903081446430_setRoleUponRegistration.resx">
-      <DependentUpon>201903081446430_setRoleUponRegistration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
