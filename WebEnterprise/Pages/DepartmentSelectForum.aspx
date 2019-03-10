@@ -6,39 +6,39 @@
 
     <div  class="jumbotron">
 
-        <table class="table table-hover">
+        <table class="table table-hover" align="center">
   <thead>
     <tr class="table-primary">
       <th scope="col">Departments</th>
-      <th scope="col">Topics</th>
-      <th scope="col">Posts</th>
+      <th scope="col" class="text-right">Topics</th>
+      <th scope="col" class="text-center">Posts</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="table-light">
+    <tr class="">
       <td>Computing</td>
-      <td>0</td>
-      <td>0</td>
+      <td class="text-right">0</td>
+      <td class="text-center">0</td>
     </tr>
-      <tr class="table-light">
+      <tr class="">
       <td>Humanities</td>
-      <td>0</td>
-      <td>0</td>
+      <td class="text-right">0</td>
+      <td class="text-center">0</td>
     </tr>
-      <tr class="table-light">
+      <tr class="">
       <td>Music</td>
-      <td>0</td>
-      <td>0</td>
+      <td class="text-right">0</td>
+      <td class="text-center">0</td>
     </tr>
-      <tr class="table-light">
+      <tr class="">
       <td>Medicine</td>
-      <td>0</td>
-      <td>0</td>
+      <td class="text-right">0</td>
+      <td class="text-center">0</td>
     </tr>
-      <tr class="table-light">
+      <tr class="">
       <td>Business</td>
-      <td>0</td>
-      <td>0</td>
+      <td class="text-right">0</td>
+      <td class="text-center">0</td>
     </tr>
   </tbody>
 </table>
