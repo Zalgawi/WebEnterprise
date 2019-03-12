@@ -5,91 +5,74 @@
     <h3 class="text-center" >You may add, view or comment on posts.</h3>
 
     <div class="jumbotron">
-    <p><form id="submitForm" class="form-horizontal">
-  
+         <div class="form-horizontal">
+  <fieldset>
 
-    <legend class="text-center">Submit a post</legend>
+      <%--------------------------------------
+          Inserting Post Information
+      --------------------------------------%>
 
-    <div class="form-group">
-        <!-- Trigger the modal with a button -->
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
-
-    <!-- Modal content-->
-    <div class="modal-content bigModal">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Insert post information below</h4>
-      </div>
-
-      <div class="modal-body">
-
-          <%-- Title--%>
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align: center">Add Post</h3>
+  </div>
+  <div class="panel-body">
+  <div>
+      
+      <%-- Title--%>
       <label for="inputTitle" class="col-lg-2 control-label">Title:</label>
       <div class="col-lg-10">
           <asp:TextBox  class="form-control" ID="inputTitle" runat="server" placeholder="Title"></asp:TextBox>
+          <br />
       </div>
-      <br/><br/>
-           <%-- Body--%>
+        <%-- Body--%>
       <label for="inputBody" class="col-lg-2 control-label">Body:</label>
       <div class="col-lg-10">
           <asp:TextBox  class="form-control" ID="inputBody" runat="server" placeholder="Body"></asp:TextBox>
+          <br />
       </div>
-      <br/><br/>
-           <%-- Description--%>
+       <%-- Description--%>
       <label for="inputDescription" class="col-lg-2 control-label">Description:</label>
       <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputDescription" runat="server" placeholder="Description" TextMode="MultiLine"></asp:TextBox>
+          <asp:TextBox  class="form-control" ID="inputDescription" runat="server" placeholder="Description"></asp:TextBox>
+          <br />
       </div>
-          <br/><br/>
-           <%-- Category--%>
+       <%-- Category--%>
       <label for="inputCategory" class="col-lg-2 control-label">Category:</label>
-          <asp:ListBox class="form-control" runat="server" id="inputCategory" SelectionMode="Multiple" >
-  <asp:ListItem Value="test1" Text="test1"></asp:ListItem>
-  <asp:ListItem Value="test2" Text="test2"></asp:ListItem>
-  <asp:ListItem Value="test3" Text="test3"></asp:ListItem>
+          <asp:ListBox class="form-control" runat="server" id="inputCategory" SelectionMode="Multiple" Width="319px" >
+  <asp:ListItem Value="Suggestion" Text="Suggestion">Suggestion</asp:ListItem>
+  <asp:ListItem Value="Events" Text="Events">Events</asp:ListItem>
+  <asp:ListItem Value="Other" Text="Other">Other</asp:ListItem>
 </asp:ListBox>
-          <%--Anonymous--%>
+      <br />
+       <%--Anonymous--%>
       <label for="inputAnonymous" class="col-lg-2 control-label">Would you like this post to be done anonymously?:</label>
           <asp:RadioButtonList ID="inputAnonymous" runat="server">
-        <asp:ListItem Value="Yes" Text="Yes">Yes</asp:ListItem>
-        <asp:ListItem Value="No" Text="No">No</asp:ListItem>
+        <asp:ListItem Value="1" Text="Yes">Yes</asp:ListItem>
+        <asp:ListItem Value="0" Text="No">No</asp:ListItem>
     </asp:RadioButtonList>
-          <button type="submit" class="btn btn-primary">Submit</button>
-
-        
-      </div>
-      <br/><br/><br/><br/><br/>
    
-
-      </div>
-
-    <div class="form-group">
+     
+    <div>
       <div class="col-lg-10 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
-        <button id="formSubmit" OnClick="formSubmit_Click" name="formSubmit" type="submit" class="btn btn-primary">Submit</button>
+          <asp:Button ID="formSubmitBtn" runat="server" autopostback="false" onclick="AddPost" Text="Button" />
       </div>
     </div>
-              </div>
+       
+    </div>    <
+  </div>
+        </fieldset>
+             </div>
+</div>
+      
+     
+
+ 
 
   
-      </div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="width: 127px">Submit a post</button>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
-  </div>
-</div>
+     
 
-</fieldset>      
-      
-</form> 
-        
-        </p>
-</div>
 
     <div align="center" class="jumbotron">
   <h3>View posts</h3>

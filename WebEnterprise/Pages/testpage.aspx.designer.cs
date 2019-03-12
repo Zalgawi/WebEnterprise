@@ -7,9 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebEnterprise.Pages {
+/*namespace WebEnterprise {
     
     
-    public partial class testpage {
+    public partial class Feed {
+        
+        /// <summary>
+        /// inputTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inputTitle;
+        
+        /// <summary>
+        /// inputBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inputBody;
+        
+        /// <summary>
+        /// inputDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inputDescription;
+        
+        /// <summary>
+        /// inputCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox inputCategory;
+        
+        /// <summary>
+        /// inputAnonymous control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputAnonymous;
     }
-}
+}*/

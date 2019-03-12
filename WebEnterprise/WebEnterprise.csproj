@@ -382,6 +382,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903121629502_update.cs" />
+    <Compile Include="Migrations\201903121629502_update.Designer.cs">
+      <DependentUpon>201903121629502_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903121719453_updatedd.cs" />
+    <Compile Include="Migrations\201903121719453_updatedd.Designer.cs">
+      <DependentUpon>201903121719453_updatedd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903121743009_newupdate.cs" />
+    <Compile Include="Migrations\201903121743009_newupdate.Designer.cs">
+      <DependentUpon>201903121743009_newupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -448,6 +460,17 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903121629502_update.resx">
+      <DependentUpon>201903121629502_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903121719453_updatedd.resx">
+      <DependentUpon>201903121719453_updatedd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903121743009_newupdate.resx">
+      <DependentUpon>201903121743009_newupdate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
