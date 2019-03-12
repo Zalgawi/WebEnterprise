@@ -1,18 +1,17 @@
 ﻿<%@ Page Title="Feed" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Feed.aspx.cs" Inherits="WebEnterprise.Feed" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2 align="center">News Feed</h2>
-    <h3 align="center">You may add, view or comment on posts.</h3>
+    <h2 class="text-center">News Feed</h2>
+    <h3 class="text-center" >You may add, view or comment on posts.</h3>
 
-    <div align="center" class="jumbotron">
+    <div class="jumbotron">
     <p><form id="submitForm" class="form-horizontal">
-  <fieldset>
+  
 
-    <legend>Submit a post</legend>
+    <legend class="text-center">Submit a post</legend>
 
     <div class="form-group">
         <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit a post</button>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
@@ -23,7 +22,9 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Insert post information below</h4>
       </div>
+
       <div class="modal-body">
+
           <%-- Title--%>
       <label for="inputTitle" class="col-lg-2 control-label">Title:</label>
       <div class="col-lg-10">
@@ -45,49 +46,24 @@
            <%-- Category--%>
       <label for="inputCategory" class="col-lg-2 control-label">Category:</label>
           <asp:ListBox class="form-control" runat="server" id="inputCategory" SelectionMode="Multiple" >
-  <asp:ListItem Text="test1"></asp:ListItem>
-  <asp:ListItem Text="test2"></asp:ListItem>
-  <asp:ListItem Text="test3"></asp:ListItem>
+  <asp:ListItem Value="test1" Text="test1"></asp:ListItem>
+  <asp:ListItem Value="test2" Text="test2"></asp:ListItem>
+  <asp:ListItem Value="test3" Text="test3"></asp:ListItem>
 </asp:ListBox>
+          <%--Anonymous--%>
+      <label for="inputAnonymous" class="col-lg-2 control-label">Would you like this post to be done anonymously?:</label>
+          <asp:RadioButtonList ID="inputAnonymous" runat="server">
+        <asp:ListItem Value="Yes" Text="Yes">Yes</asp:ListItem>
+        <asp:ListItem Value="No" Text="No">No</asp:ListItem>
+    </asp:RadioButtonList>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
         
       </div>
       <br/><br/><br/><br/><br/>
    
 
       </div>
-      <br/><br/>
-          
-          
-          
-  
-    <br/><br/><br/><br/>
-
-    
-
-      <div class="form-group">
-      <label for="inputImage" class="col-lg-2 control-label">Image upload:</label>
-      <div class="col-lg-10">
-        <input type="file"  class="form-control" name="inputImage" id="inputImage">
-      </div>
-    </div>
-      <br/><br/>
-      <div class="form-group">
-      <label class="col-lg-2 control-label">Would you like this post to be done anonymously?</label>
-      <div class="col-lg-10">
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="1">
-            Yes
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="2" checked="">
-            No
-          </label>
-        </div>
-      </div>
-    </div>
 
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
@@ -99,6 +75,7 @@
 
   
       </div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="width: 127px">Submit a post</button>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>

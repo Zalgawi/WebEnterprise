@@ -21,6 +21,7 @@ namespace WebEnterprise.Models
         public string postBody { get; set; }
         public string postDescription { get; set; }
         public string postCategory { get; set; }
+        public bool postAnonymous { get; set; }
 
         private ApplicationDbContext _dbContext;
 
