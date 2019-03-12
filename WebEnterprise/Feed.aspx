@@ -44,16 +44,13 @@
           <br/><br/>
            <%-- Category--%>
       <label for="inputCategory" class="col-lg-2 control-label">Category:</label>
-       <div class="col-lg-10">
-        <select multiple="" id="feedSelect" name="feedSelect" class="form-control">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
+          <asp:ListBox class="form-control" runat="server" id="inputCategory" SelectionMode="Multiple" >
+  <asp:ListItem Text="test1"></asp:ListItem>
+  <asp:ListItem Text="test2"></asp:ListItem>
+  <asp:ListItem Text="test3"></asp:ListItem>
+</asp:ListBox>
+        
       </div>
-    </div>
       <br/><br/><br/><br/><br/>
    
 
