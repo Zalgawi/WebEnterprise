@@ -17,11 +17,26 @@ namespace WebEnterprise.Models
         [ForeignKey("ApplicationUser")]
         public string Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
+        public string postTitle { get; set; }
         public string postBody { get; set; }
         public string postDescription { get; set; }
         public string postCategory { get; set; }
 
-        
+        private ApplicationDbContext _dbContext;
+
+        public Post()
+        {
+            this._dbContext = new ApplicationDbContext();
+        }
+
+        public void AddToDatabase()
+        {
+            _dbContext.Posts.Add(this);
+            _dbContext.SaveChanges();
+
+        }
+
+
 
     }
 }

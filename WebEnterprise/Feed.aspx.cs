@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using WebEnterprise.Models;
 
 namespace WebEnterprise
 {
@@ -22,7 +23,20 @@ namespace WebEnterprise
 
         }
 
-        protected void formSubmit_click(object sender, EventArgs e)
+        public void AddPost()
+        {
+            Post newPost = new Post()
+            {
+                postTitle = inputTitle.Text,
+                postBody = inputBody.Text,
+                postDescription = inputDescription.Text,
+               // postCategory = input
+            };
+        }
+
+
+
+            protected void formSubmit_click(object sender, EventArgs e)
         {
             //start code from here
             /*try

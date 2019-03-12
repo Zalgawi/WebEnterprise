@@ -24,24 +24,27 @@
         <h4 class="modal-title">Insert post information below</h4>
       </div>
       <div class="modal-body">
-        <label for="inputTitle" class="col-lg-2 control-label">Title:</label>
+          <%-- Title--%>
+      <label for="inputTitle" class="col-lg-2 control-label">Title:</label>
       <div class="col-lg-10">
-        <input type="text"  class="form-control" id="inputTitle" name="inputTitle" placeholder="Title">
+          <asp:TextBox  class="form-control" ID="inputTitle" runat="server" placeholder="Title"></asp:TextBox>
       </div>
-    </div>
       <br/><br/>
-          
-    <div class="form-group">
+           <%-- Body--%>
+      <label for="inputBody" class="col-lg-2 control-label">Body:</label>
+      <div class="col-lg-10">
+          <asp:TextBox  class="form-control" ID="inputBody" runat="server" placeholder="Body"></asp:TextBox>
+      </div>
+      <br/><br/>
+           <%-- Description--%>
       <label for="inputDescription" class="col-lg-2 control-label">Description:</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="inputDescription" name="inputDescription"></textarea>
-         </div>
-    </div>
-    <br/><br/><br/><br/>
-
-    <div class="form-group">
-      <label for="feedSelect" class="col-lg-2 control-label">Select a category</label>
-      <div class="col-lg-10">
+          <asp:TextBox  class="form-control" ID="inputDescription" runat="server" placeholder="Description" TextMode="MultiLine"></asp:TextBox>
+      </div>
+          <br/><br/>
+           <%-- Category--%>
+      <label for="inputCategory" class="col-lg-2 control-label">Category:</label>
+       <div class="col-lg-10">
         <select multiple="" id="feedSelect" name="feedSelect" class="form-control">
           <option>1</option>
           <option>2</option>
@@ -52,6 +55,17 @@
       </div>
     </div>
       <br/><br/><br/><br/><br/>
+   
+
+      </div>
+      <br/><br/>
+          
+          
+          
+  
+    <br/><br/><br/><br/>
+
+    
 
       <div class="form-group">
       <label for="inputImage" class="col-lg-2 control-label">Image upload:</label>
@@ -84,6 +98,8 @@
         <button id="formSubmit" OnClick="formSubmit_Click" name="formSubmit" type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>
+              </div>
+
   
       </div>
       <div class="modal-footer">
@@ -96,7 +112,9 @@
 
 </fieldset>      
       
-</form> </p>
+</form> 
+        
+        </p>
 </div>
 
     <div align="center" class="jumbotron">
