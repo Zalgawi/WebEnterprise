@@ -22,12 +22,13 @@ namespace WebEnterprise.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            //context.Roles.AddOrUpdate(r => r.Name,
-            //    new IdentityRole { Name = "Admin"},
-            //    new IdentityRole { Name = "QACoordinator" },
-            //    new IdentityRole { Name = "QAManager" },
-            //    new IdentityRole { Name = "Staff" }
-            //    );
+            context.Departments.AddOrUpdate(r => r.deptName,
+                new Department { deptName = "Computing"},
+                new Department { deptName = "Humanities" },
+                new Department { deptName = "Music" },
+                new Department { deptName = "Medicine" },
+                new Department { deptName = "Business" }
+                );
 
             //The following code adds the roles to the AspNetRoles database.
             var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));

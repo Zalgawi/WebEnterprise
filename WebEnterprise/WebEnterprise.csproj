@@ -204,7 +204,6 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Pages\Category.aspx" />
     <Content Include="Pages\DepartmentSelectForum.aspx" />
-    <Content Include="Pages\testpage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -382,17 +381,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903121629502_update.cs" />
-    <Compile Include="Migrations\201903121629502_update.Designer.cs">
-      <DependentUpon>201903121629502_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903121719453_updatedd.cs" />
-    <Compile Include="Migrations\201903121719453_updatedd.Designer.cs">
-      <DependentUpon>201903121719453_updatedd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903121743009_newupdate.cs" />
-    <Compile Include="Migrations\201903121743009_newupdate.Designer.cs">
-      <DependentUpon>201903121743009_newupdate.cs</DependentUpon>
+    <Compile Include="Migrations\201903122140108_initiate.cs" />
+    <Compile Include="Migrations\201903122140108_initiate.Designer.cs">
+      <DependentUpon>201903122140108_initiate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -412,13 +403,6 @@
     </Compile>
     <Compile Include="Pages\DepartmentSelectForum.aspx.designer.cs">
       <DependentUpon>DepartmentSelectForum.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\testpage.aspx.cs">
-      <DependentUpon>testpage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\testpage.aspx.designer.cs">
-      <DependentUpon>testpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -462,14 +446,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903121629502_update.resx">
-      <DependentUpon>201903121629502_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903121719453_updatedd.resx">
-      <DependentUpon>201903121719453_updatedd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903121743009_newupdate.resx">
-      <DependentUpon>201903121743009_newupdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903122140108_initiate.resx">
+      <DependentUpon>201903122140108_initiate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
