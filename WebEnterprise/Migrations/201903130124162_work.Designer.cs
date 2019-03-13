@@ -7,13 +7,13 @@ namespace WebEnterprise.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initiate : IMigrationMetadata
+    public sealed partial class work : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initiate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(work));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903122140108_initiate"; }
+            get { return "201903130124162_work"; }
         }
         
         string IMigrationMetadata.Source

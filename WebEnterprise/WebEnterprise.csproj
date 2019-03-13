@@ -381,9 +381,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903122140108_initiate.cs" />
-    <Compile Include="Migrations\201903122140108_initiate.Designer.cs">
-      <DependentUpon>201903122140108_initiate.cs</DependentUpon>
+    <Compile Include="Migrations\201903130124162_work.cs" />
+    <Compile Include="Migrations\201903130124162_work.Designer.cs">
+      <DependentUpon>201903130124162_work.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -446,8 +446,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903122140108_initiate.resx">
-      <DependentUpon>201903122140108_initiate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903130124162_work.resx">
+      <DependentUpon>201903130124162_work.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
