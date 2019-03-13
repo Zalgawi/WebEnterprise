@@ -8428,3 +8428,8 @@ tbody {
     background-color: #ffffff;
     color: #000;
 }
+
+.TableHyperlink {
+    text-decoration: none;
+    color: black;
+}

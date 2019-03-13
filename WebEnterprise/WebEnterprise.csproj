@@ -203,6 +203,7 @@
     <Content Include="App_Data\FORUM.mdf.orig" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Pages\Category.aspx" />
+    <Content Include="Pages\Departments\Computing\subComputing.aspx" />
     <Content Include="Pages\Departments\DepartmentSelectForum.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -393,6 +394,13 @@
     <Compile Include="Pages\Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Departments\Computing\subComputing.aspx.cs">
+      <DependentUpon>subComputing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Departments\Computing\subComputing.aspx.designer.cs">
+      <DependentUpon>subComputing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Departments\DepartmentSelectForum.aspx.cs">
       <DependentUpon>DepartmentSelectForum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -430,7 +438,6 @@
     <Folder Include="App_Data\forumuploadfiles\" />
     <Folder Include="forum\" />
     <Folder Include="Pages\Departments\Business\" />
-    <Folder Include="Pages\Departments\Computing\" />
     <Folder Include="Pages\Departments\Humanities\" />
     <Folder Include="Pages\Departments\Medicine\" />
     <Folder Include="Pages\Departments\Music\" />
