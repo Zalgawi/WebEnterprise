@@ -22,5 +22,6 @@ namespace WebEnterprise.Models
         public string Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
         public string commentBody { get; set; }
+
     }
 }
