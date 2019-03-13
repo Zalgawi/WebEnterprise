@@ -22,17 +22,20 @@ namespace WebEnterprise.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+
+
+
             context.Departments.AddOrUpdate(r => r.deptName,
-                new Department { deptName = "Computing"},
-                new Department { deptName = "Humanities" },
-                new Department { deptName = "Music" },
-                new Department { deptName = "Medicine" },
-                new Department { deptName = "Business" }
-                );
+                    new Department { deptName = "Computing" },
+                    new Department { deptName = "Humanities" },
+                    new Department { deptName = "Music" },
+                    new Department { deptName = "Medicine" },
+                    new Department { deptName = "Business" }
+                    );
 
             //The following code adds the roles to the AspNetRoles database.
             var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            string[] roleNames = { "Admin", "QACoordinator", "QAManager", "Staff" };
+            string[] roleNames = { "Admin", "QACoordinator", "QAManager", "Staff", "Anonymous" };
             IdentityResult roleResult;
             foreach (var roleName in roleNames)
             {
@@ -42,10 +45,28 @@ namespace WebEnterprise.Migrations
                 }
             }
 
-            //After .AddToRole insert the ("UserId", "UserRole ");
-          //  var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-          //  UserManager.AddToRole("c1d97ec4-91e8-4ab9-975f-952ede444a7f", "Admin");
+            {
+                try
+                {
+                    var passwordHash = new PasswordHasher();
+                    string password = passwordHash.HashPassword("Anonymous@123");
+                    context.Users.AddOrUpdate(u => u.UserName, new ApplicationUser {deptId=2, UserName = "Anonymous@Anonymous.com", PasswordHash = password, PhoneNumber = "12345678911", Email = "Anonymous@Anonymous.com" });
+                    context.Roles.AddOrUpdate(new IdentityRole { Id = "a1f04ba5-5600-4a6e-be43-ae0d6360c0ab", Name = "Anonymous" });
+                }
+                catch (Exception ex)
+                {
+                    string message = ex.Message;
+                    if (ex.InnerException != null)
+                    {
+                        string innerMessage = ex.Message;
+                    }
+                }
 
+                //After .AddToRole insert the ("UserId", "UserRole ");
+                //  var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                //  UserManager.AddToRole("c1d97ec4-91e8-4ab9-975f-952ede444a7f", "Admin");
+
+            }
         }
     }
 }

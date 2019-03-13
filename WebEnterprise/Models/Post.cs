@@ -23,6 +23,7 @@ namespace WebEnterprise.Models
         public string postCategory { get; set; }
         public bool postAnonymous { get; set; }
         public bool likeORdislike { get; set; }
+
         //public string postLikes { get; set; }
         //public string postDislikes { get; set; }
 

@@ -33,10 +33,10 @@ namespace WebEnterprise
 
             
             var User = System.Web.HttpContext.Current.User.Identity.GetUserId();
-            if (Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)))
-            {
-                User = "anonymous";
-            }
+            //if (Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)))
+            //{
+            //    User = "anonymous";
+            //}
 
             Post newPost = new Post()
             {
@@ -45,7 +45,7 @@ namespace WebEnterprise
                 postDescription = inputDescription.Text,
                 postCategory = inputCategory.SelectedValue,
                 postAnonymous = Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)),
-                Id = User
+                Id = User,
             };
 
             using (var _dbContext = new ApplicationDbContext())

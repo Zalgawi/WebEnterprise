@@ -57,6 +57,7 @@ namespace WebEnterprise.Models
         }
 
         public object User { get; internal set; }
+        public object ApplicationUser { get; internal set; }
 
         public static ApplicationDbContext Create()
         {
