@@ -19,7 +19,7 @@ namespace WebEnterprise.Models
         public virtual ApplicationUser ApplicationUser { get; set; }
         public string postTitle { get; set; }
         public string postBody { get; set; }
-        public string postDescription { get; set; }
+        //public string postDescription { get; set; }
         public string postCategory { get; set; }
         public bool postAnonymous { get; set; }
         public bool likeORdislike { get; set; }

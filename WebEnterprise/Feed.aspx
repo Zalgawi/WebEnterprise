@@ -30,12 +30,15 @@
           <asp:TextBox  class="form-control" ID="inputBody" runat="server" placeholder="Body"></asp:TextBox>
           <br />
       </div>
-       <%-- Description--%>
+<%--       <%-- Description--%
       <label for="inputDescription" class="col-lg-2 control-label">Description:</label>
       <div class="col-lg-10">
           <asp:TextBox  class="form-control" ID="inputDescription" runat="server" placeholder="Description"></asp:TextBox>
           <br />
       </div>
+    --%>
+
+
        <%-- Category--%>
       <label for="inputCategory" class="col-lg-2 control-label">Category:</label>
           <asp:ListBox class="form-control" runat="server" id="inputCategory" SelectionMode="Multiple" Width="319px" >
@@ -76,6 +79,30 @@
 
     <div align="center" class="jumbotron">
   <h3>View posts</h3>
+        <p>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [postTitle], [postCategory], [likeORdislike] FROM [Posts]"></asp:SqlDataSource>
+        </p>
+        <p>
+            <asp:GridView  class="table table-hover table-striped" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="711px">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundField DataField="postTitle" HeaderText="postTitle" SortExpression="postTitle" />
+                    <asp:BoundField DataField="postCategory" HeaderText="postCategory" SortExpression="postCategory" />
+                    <asp:CheckBoxField DataField="likeORdislike" HeaderText="likeORdislike" SortExpression="likeORdislike" />
+                </Columns>
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            </asp:GridView>
+        </p>
+        <p>&nbsp;</p>
     <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>

@@ -42,7 +42,7 @@ namespace WebEnterprise
             {
                 postTitle = inputTitle.Text,
                 postBody = inputBody.Text,
-                postDescription = inputDescription.Text,
+                //postDescription = inputDescription.Text,
                 postCategory = inputCategory.SelectedValue,
                 postAnonymous = Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)),
                 Id = User,
@@ -53,46 +53,6 @@ namespace WebEnterprise
                 _dbContext.Posts.Add(newPost);
                 _dbContext.SaveChanges();
             }
-        }
-
-
-
-        protected void formSubmit_click(object sender, EventArgs e)
-        {
-
-            //AddPost();
-           // SqlConnection PostConnection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WebEnterprise-20190201040107.mdf;Initial Catalog=aspnet-WebEnterprise-20190201040107;Integrated Security=True");
-            //PostConnection.Open();
-            
-           //string Query= "INSERT INTO dbo.Posts (postTitle, postBody, postDescription, postCategory, postAnonymous) VALUES ('" + inputTitle.Text + "','" + inputBody.Text + "','" + inputDescription.Text + "','" + inputCategory.SelectedValue + "','" + inputAnonymous.SelectedValue + "')";
-            //SqlDataAdapter enterpriseWeb = new SqlDataAdapter(Query, PostConnection);
-            //SqlCommand thisCommand = PostConnection.CreateCommand();
-            //thisCommand.CommandText = 
-            //thisCommand.ExecuteNonQuery();
-            //PostConnection.Close();
-
-            //start code from here
-            /*try
-            {
-
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-                conn.Open();
-                string insertQuery = "insert into RegisterDataBase(postTitle)values (@posttitle)";
-                SqlCommand cmd = new SqlCommand(insertQuery, conn);
-                cmd.Parameters.AddWithValue("@posttitle", inputTitle.Text);
-
-                cmd.ExecuteNonQuery();
-
-                Response.Write("Student registeration Successfully!!!thank you");
-
-                conn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                Response.Write("error" + ex.ToString());
-            }
-        }*/
         }
     }
 }
