@@ -13,6 +13,15 @@ namespace WebEnterprise {
     public partial class Feed {
         
         /// <summary>
+        /// TitleValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TitleValidator;
+        
+        /// <summary>
         /// inputTitle control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace WebEnterprise {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputTitle;
+        
+        /// <summary>
+        /// BodyValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator BodyValidator;
         
         /// <summary>
         /// inputBody control.
@@ -31,13 +49,31 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.TextBox inputBody;
         
         /// <summary>
+        /// categoryValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator categoryValidator;
+        
+        /// <summary>
         /// inputCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox inputCategory;
+        protected global::System.Web.UI.WebControls.DropDownList inputCategory;
+        
+        /// <summary>
+        /// AnonymousValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AnonymousValidator;
         
         /// <summary>
         /// inputAnonymous control.
@@ -58,21 +94,48 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.Button formSubmitBtn;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// commentBodyValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator commentBodyValidator;
         
         /// <summary>
-        /// GridView1 control.
+        /// commentBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.TextBox commentBody;
+        
+        /// <summary>
+        /// commentAnonymousValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator commentAnonymousValidator;
+        
+        /// <summary>
+        /// commentAnonymous control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList commentAnonymous;
+        
+        /// <summary>
+        /// commentSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button commentSubmitBtn;
     }
 }

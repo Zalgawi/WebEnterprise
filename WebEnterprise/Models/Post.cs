@@ -23,25 +23,8 @@ namespace WebEnterprise.Models
         public string postCategory { get; set; }
         public bool postAnonymous { get; set; }
         public bool likeORdislike { get; set; }
+        public DateTime postDate { get; set; }
 
-        //public string postLikes { get; set; }
-        //public string postDislikes { get; set; }
-
-       // private ApplicationDbContext _dbContext;
-
-        //public Post()
-        //{
-           // this._dbContext = new ApplicationDbContext();
-       // }
-
-        //public void AddToDatabase()
-        //{
-        //    _dbContext.Posts.Add(this);
-        //    _dbContext.SaveChanges();
-
-        //}
-
-
-
+       
     }
 }

@@ -52,34 +52,6 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Click To Read Terms of Service</button>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content bigModal">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Carefully read through the Terms of Service and tick the box</h4>
-      </div>
-                
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-        <button id="formSubmit" OnClick="formSubmit_Click" name="formSubmit" type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-                <br />
                 <br />
 
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />

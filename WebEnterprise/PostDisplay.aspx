@@ -2,23 +2,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-  <h1 class="display-3" style="text-align: center; font-size: xx-large;">-Post Title-</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.&nbsp;&nbsp;&nbsp; </p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
+
+        <br />
+        <asp:Label class="label label-default" ID="outputAnonymous" runat="server"></asp:Label>
+        <br />
+        <asp:Label class="label label-default" ID="outputlikeORdislike" runat="server"></asp:Label>
+        <div id="outputTitleContainer" class="text-center"><asp:Label class="label label-default" ID="outputTitle" runat="server" style="font-size: xx-large"></asp:Label></div>
+        <br />
+        <div id="outputUserIdContainer" class="text-center"><asp:Label class="label label-default" ID="outputId" runat="server" style="font-size: x-large"></asp:Label></div>
+        <br />
 </div>
 
     <div class="jumbotron">
-  <h1 class="display-3">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
+        <div id="outputBodyContainer" class="text-center"><asp:Label class="label label-default" ID="outputBody" runat="server" style="font-size: medium"></asp:Label></div>
+        <hr class="my-4">
+        <div id="outputCategoryContainer" class="text-center"><asp:Label class="label label-default" ID="outputCategory" runat="server" style="font-size: x-small"></asp:Label></div>
 </div>
 
 </asp:Content>

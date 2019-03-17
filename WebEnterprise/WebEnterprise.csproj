@@ -383,6 +383,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903151409410_start.cs" />
+    <Compile Include="Migrations\201903151409410_start.Designer.cs">
+      <DependentUpon>201903151409410_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903171708273_addedPostTime.cs" />
+    <Compile Include="Migrations\201903171708273_addedPostTime.Designer.cs">
+      <DependentUpon>201903171708273_addedPostTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903172048321_updatedComment.cs" />
+    <Compile Include="Migrations\201903172048321_updatedComment.Designer.cs">
+      <DependentUpon>201903172048321_updatedComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903172049485_updatedCommentDate.cs" />
+    <Compile Include="Migrations\201903172049485_updatedCommentDate.Designer.cs">
+      <DependentUpon>201903172049485_updatedCommentDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -460,6 +476,20 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903151409410_start.resx">
+      <DependentUpon>201903151409410_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903171708273_addedPostTime.resx">
+      <DependentUpon>201903171708273_addedPostTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903172048321_updatedComment.resx">
+      <DependentUpon>201903172048321_updatedComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903172049485_updatedCommentDate.resx">
+      <DependentUpon>201903172049485_updatedCommentDate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

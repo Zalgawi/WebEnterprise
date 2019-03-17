@@ -15,115 +15,84 @@
   <div class="panel-heading">
     <h3 class="panel-title" style="text-align: center">Add Post</h3>
   </div>
-  <div class="panel-body">
-  <div>
+  
       
       <%-- Title--%>
-      <label for="inputTitle" class="col-lg-2 control-label">Title:</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputTitle" runat="server" placeholder="Title"></asp:TextBox>
+      <label for="inputTitle" class="col-lg-2 control-label">Title:</label><asp:RequiredFieldValidator controltovalidate="inputTitle" ID="TitleValidator" runat="server" ErrorMessage="*Title is required" ForeColor="Red"></asp:RequiredFieldValidator>      
+          <asp:TextBox class="form-control" style="resize:none;" ID="inputTitle" runat="server" placeholder="Title"></asp:TextBox>
+
           <br />
-      </div>
         <%-- Body--%>
-      <label for="inputBody" class="col-lg-2 control-label">Body:</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputBody" runat="server" placeholder="Body"></asp:TextBox>
-          <br />
-      </div>
-<%--       <%-- Description--%
-      <label for="inputDescription" class="col-lg-2 control-label">Description:</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputDescription" runat="server" placeholder="Description"></asp:TextBox>
-          <br />
-      </div>
-    --%>
-
-
+      <label for="inputBody" class="col-lg-2 control-label">Body:</label><asp:RequiredFieldValidator controltovalidate="inputBody" ID="BodyValidator" runat="server" ErrorMessage="*Body is required" ForeColor="Red"></asp:RequiredFieldValidator>    
+         <asp:TextBox Width="400px" style="resize:none;" class="form-control" ID="inputBody" runat="server" placeholder="Body" TextMode="MultiLine"></asp:TextBox>
+          <br />      
        <%-- Category--%>
-      <label for="inputCategory" class="col-lg-2 control-label">Category:</label>
-          <asp:ListBox class="form-control" runat="server" id="inputCategory" SelectionMode="Multiple" Width="319px" >
-  <asp:ListItem Value="Suggestion" Text="Suggestion">Suggestion</asp:ListItem>
-  <asp:ListItem Value="Events" Text="Events">Events</asp:ListItem>
-  <asp:ListItem Value="Other" Text="Other">Other</asp:ListItem>
-</asp:ListBox>
+      
+      <label for="inputCategory" class="col-lg-2 control-label">Category:</label><asp:RequiredFieldValidator controltovalidate="inputAnonymous" ID="categoryValidator" runat="server" ErrorMessage="*Please select a category" ForeColor="Red"></asp:RequiredFieldValidator>    
+
+      <asp:DropDownList class="form-control" ID="inputCategory" runat="server" Width="270px">
+          <asp:ListItem Value="Suggestion">Suggestion</asp:ListItem>
+          <asp:ListItem Value="Events">Events</asp:ListItem>
+          <asp:ListItem Value="Education">Education</asp:ListItem>
+          <asp:ListItem Value="Other">Other</asp:ListItem>
+      </asp:DropDownList>
+
       <br />
-       <%--Anonymous--%>
-      <label for="inputAnonymous" class="col-lg-2 control-label">Would you like this post to be done anonymously?:</label>
-          <asp:RadioButtonList ID="inputAnonymous" runat="server">
+       <%--Anonymous--%>    
+      <label for="inputAnonymous" class="col-lg-2 control-label">Would you like this post to be submitted anonymously?:</label><asp:RequiredFieldValidator controltovalidate="inputAnonymous" ID="AnonymousValidator" runat="server" ErrorMessage="*Please select an option" ForeColor="Red"></asp:RequiredFieldValidator>    
+      <asp:RadioButtonList ID="inputAnonymous" runat="server" BorderStyle="None" CellPadding="0" CellSpacing="0">
         <asp:ListItem Value="1" Text="Yes">Yes</asp:ListItem>
         <asp:ListItem Value="0" Text="No">No</asp:ListItem>
     </asp:RadioButtonList>
+
    
      
+      <%-- submit button --%>
     <div>
+        <br />
       <div class="col-lg-10 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
-          <asp:Button ID="formSubmitBtn" runat="server" autopostback="false" onclick="AddPost" Text="Button" />
+          <asp:Button  class="btn btn-default" ID="formSubmitBtn" runat="server" autopostback="false" onclick="AddPost" Text="Submit" />
       </div>
     </div>
-       
-    </div>   
-  </div>
+ 
+  
         </fieldset>
              </div>
 </div>
+
+    <%--------------------------------------------------------------------%>
+
+    <div class="jumbotron">
+        <fieldset>
+            <h3 class="panel-title" style="text-align: center">Add Comment</h3>
+         <%--------------------------------------
+          Inserting Comment Information
+          --------------------------------------%>
+
+
+    
       
-     
-
- 
-
-  
-
-     
-
-
-    <div align="center" class="jumbotron">
-  <h3>View posts</h3>
-        <p>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [postTitle], [postCategory], [likeORdislike] FROM [Posts]"></asp:SqlDataSource>
-        </p>
-        <p>
-            <asp:GridView  class="table table-hover table-striped" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="711px">
-                <AlternatingRowStyle BackColor="White" />
-                <Columns>
-                    <asp:BoundField DataField="postTitle" HeaderText="postTitle" SortExpression="postTitle" />
-                    <asp:BoundField DataField="postCategory" HeaderText="postCategory" SortExpression="postCategory" />
-                    <asp:CheckBoxField DataField="likeORdislike" HeaderText="likeORdislike" SortExpression="likeORdislike" />
-                </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>
-        </p>
-        <p>&nbsp;</p>
-    <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-  <div>
-  <ul class="pagination pagination-sm">
-  <li class="disabled"><a href="#">&laquo;</a></li>
-  <li class="active"><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
+     <%-- Body--%>
+      <label for="commentBody" class="col-lg-2 control-label">Comment:</label><asp:RequiredFieldValidator controltovalidate="commentBody" ID="commentBodyValidator" runat="server" ErrorMessage="*Comment is required" ForeColor="Red"></asp:RequiredFieldValidator>    
+         <asp:TextBox Width="400px" style="resize:none;" class="form-control" ID="commentBody" runat="server" placeholder="Body" TextMode="MultiLine"></asp:TextBox>
+          <br />      
+    <%--Anonymous--%>    
+      <label for="commentAnonymous" class="col-lg-2 control-label">Would you like this comment to be submitted anonymously?:</label><asp:RequiredFieldValidator controltovalidate="commentAnonymous" ID="commentAnonymousValidator" runat="server" ErrorMessage="*Please select an option" ForeColor="Red"></asp:RequiredFieldValidator>    
+      <asp:RadioButtonList ID="commentAnonymous" runat="server" BorderStyle="None" CellPadding="0" CellSpacing="0">
+        <asp:ListItem Value="1" Text="Yes">Yes</asp:ListItem>
+        <asp:ListItem Value="0" Text="No">No</asp:ListItem>
+    </asp:RadioButtonList>  
+    <br />
+    <%-- submit button --%>
+    <div>
+        <br />
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+          <asp:Button  class="btn btn-default" ID="commentSubmitBtn" runat="server" autopostback="false" onclick="AddComment" Text="Submit" />
       </div>
-</ul>
-</div>
-   
+    </div>
+        </fieldset>
+   </div>
         
 </asp:Content>
