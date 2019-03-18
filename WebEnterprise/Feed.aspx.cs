@@ -55,30 +55,6 @@ namespace WebEnterprise
             }
         }
 
-        protected void AddComment(object sender, EventArgs e)
-        {
-
-
-
-            var User = System.Web.HttpContext.Current.User.Identity.GetUserId();
-            //if (Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)))
-            //{
-            //    User = "anonymous";
-            //}
-
-            Comment newComment = new Comment()
-            {
-                commentBody = commentBody.Text,
-                commentAnonymous = Convert.ToBoolean(Int32.Parse(commentAnonymous.SelectedValue)),
-                Id = User,
-                commentDate = DateTime.Now,
-            };
-
-            using (var _dbContext = new ApplicationDbContext())
-            {
-                _dbContext.Comments.Add(newComment);
-                _dbContext.SaveChanges();
-            }
-        }
+        
     }
 }

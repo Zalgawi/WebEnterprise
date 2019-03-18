@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,48 +14,7 @@ namespace WebEnterprise
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*/CONNECT TO THE DATABASE
-            string connStr = (@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WebEnterprise-20190201040107.mdf;Initial Catalog=aspnet-WebEnterprise-20190201040107;Integrated Security=True");
-            SqlConnection conn = new SqlConnection(connStr);
-            conn.Open();
-
-            //CREATE A COMMAND
-            SqlCommand cmd = new SqlCommand("SELECT [Id], [postTitle], [postBody], [postCategory], [postAnonymous], [likeORdislike] FROM [dbo].[Posts]");
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Connection = conn;
-
-            string idOutput = "";
-            string titleOutput = "";            
-            string bodyOutput = "";
-            string categoryOutput = "";
-            string anonymousOutput = "";
-            string likeORdislikeOutput = "";
-
-            //READ FROM DATABASE
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                idOutput += reader["Id"].ToString();
-                titleOutput += reader["postTitle"].ToString();
-                bodyOutput += reader["postBody"].ToString();
-                categoryOutput += reader["postCategory"].ToString();
-                anonymousOutput += reader["postAnonymous"].ToString();
-                likeORdislikeOutput += reader["likeORdislike"].ToString();
-                //temp += "<br/>";
-
-            }
-
-            conn.Close();
-
-            outputId.Text = idOutput;
-            outputTitle.Text = titleOutput;
-            outputBody.Text = bodyOutput;
-            outputCategory.Text = categoryOutput;
-            outputAnonymous.Text = anonymousOutput;
-            outputlikeORdislike.Text = likeORdislikeOutput;
-            //outputBody.Text = bodyOutput;*/
-
-
+                       
 
 
         }
@@ -85,6 +45,32 @@ namespace WebEnterprise
 
 
 
+        }
+
+        protected void AddComment(object sender, EventArgs e)
+        {
+
+
+
+            var User = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            //if (Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)))
+            //{
+            //    User = "anonymous";
+            //}
+
+            Comment newComment = new Comment()
+            {
+                commentBody = commentBody.Text,
+                commentAnonymous = Convert.ToBoolean(Int32.Parse(commentAnonymous.SelectedValue)),
+                Id = User,
+                commentDate = DateTime.Now,
+            };
+
+            using (var _dbContext = new ApplicationDbContext())
+            {
+                _dbContext.Comments.Add(newComment);
+                _dbContext.SaveChanges();
+            }
         }
     }
 }

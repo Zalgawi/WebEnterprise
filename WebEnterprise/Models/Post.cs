@@ -24,7 +24,7 @@ namespace WebEnterprise.Models
         public bool postAnonymous { get; set; }
         public bool likeORdislike { get; set; }
         public DateTime postDate { get; set; }
-
+   
        
     }
 }

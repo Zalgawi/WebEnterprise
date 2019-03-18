@@ -399,6 +399,14 @@
     <Compile Include="Migrations\201903172049485_updatedCommentDate.Designer.cs">
       <DependentUpon>201903172049485_updatedCommentDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903181438147_addedPost.cs" />
+    <Compile Include="Migrations\201903181438147_addedPost.Designer.cs">
+      <DependentUpon>201903181438147_addedPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903181458431_updatedPostcs.cs" />
+    <Compile Include="Migrations\201903181458431_updatedPostcs.Designer.cs">
+      <DependentUpon>201903181458431_updatedPostcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -489,6 +497,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903172049485_updatedCommentDate.resx">
       <DependentUpon>201903172049485_updatedCommentDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903181438147_addedPost.resx">
+      <DependentUpon>201903181438147_addedPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903181458431_updatedPostcs.resx">
+      <DependentUpon>201903181458431_updatedPostcs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

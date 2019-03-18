@@ -19,4 +19,36 @@
         <div id="outputCategoryContainer" class="text-center"><asp:Label class="label label-default" ID="outputCategory" runat="server" style="font-size: x-small"></asp:Label></div>
 </div>
 
+    <div class="jumbotron">
+        <fieldset>
+            <h3 class="panel-title" style="text-align: center">Add Comment</h3>
+         <%--------------------------------------
+          Inserting Comment Information
+          --------------------------------------%>
+
+
+    
+      
+     <%-- Body--%>
+      <label for="commentBody" class="col-lg-2 control-label">Comment:</label><asp:RequiredFieldValidator controltovalidate="commentBody" ID="commentBodyValidator" runat="server" ErrorMessage="*Comment is required" ForeColor="Red"></asp:RequiredFieldValidator>    
+         <asp:TextBox Width="400px" style="resize:none;" class="form-control" ID="commentBody" runat="server" placeholder="Body" TextMode="MultiLine"></asp:TextBox>
+          <br />      
+    <%--Anonymous--%>    
+      <label for="commentAnonymous" class="col-lg-2 control-label">Would you like this comment to be submitted anonymously?:</label><asp:RequiredFieldValidator controltovalidate="commentAnonymous" ID="commentAnonymousValidator" runat="server" ErrorMessage="*Please select an option" ForeColor="Red"></asp:RequiredFieldValidator>    
+      <asp:RadioButtonList ID="commentAnonymous" runat="server" BorderStyle="None" CellPadding="0" CellSpacing="0">
+        <asp:ListItem Value="1" Text="Yes">Yes</asp:ListItem>
+        <asp:ListItem Value="0" Text="No">No</asp:ListItem>
+    </asp:RadioButtonList>  
+    <br />
+    <%-- submit button --%>
+    <div>
+        <br />
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+          <asp:Button  class="btn btn-default" ID="commentSubmitBtn" runat="server" autopostback="false" onclick="AddComment" Text="Submit" />
+      </div>
+    </div>
+        </fieldset>
+   </div>
+
 </asp:Content>
