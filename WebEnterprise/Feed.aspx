@@ -46,6 +46,7 @@
     </asp:RadioButtonList>
 
       <%-- Terms and Conditions tickbox --%>
+      <%--MUST DO BACKEND CODE FOR THIS TO ENSURE THE VALIDATION WORKS--%>
       <label for="inputTaC" class="col-lg-2 control-label">By ticking the following box, you are declaring that you agree to the terms and conditions:</label>
       <asp:CheckBox ID="inputTaC" runat="server" />
 

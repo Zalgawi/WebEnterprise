@@ -6,12 +6,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebEnterprise.Pages.Departments.Computing
+namespace WebEnterprise.Pages.Departments.Music
 {
-    public partial class subComputing : System.Web.UI.Page
+    public partial class subMusic : System.Web.UI.Page
     {
-       
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.User.Identity.IsAuthenticated)
@@ -25,13 +23,13 @@ namespace WebEnterprise.Pages.Departments.Computing
             if (!Page.IsPostBack)
             {
                 //bind the gridview data
-                computingPostGridView.DataSource = computingDataSource;
-                computingPostGridView.DataBind();
+                musicPostGridView.DataSource = musicDataSource;
+                musicPostGridView.DataBind();
             }
 
         }
 
-        protected void computingPostGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void musicPostGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             //check if the row is the header row
             if (e.Row.RowType == DataControlRowType.Header)
@@ -41,14 +39,9 @@ namespace WebEnterprise.Pages.Departments.Computing
             }
         }
 
-        protected void computingPostGridView_SelectedIndexChanged(object sender, EventArgs e)
+        protected void musicPostGridViewPostGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        //protected void 
-        //    {
-
-        //    }
     }
 }

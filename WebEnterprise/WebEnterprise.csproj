@@ -203,8 +203,12 @@
     <Content Include="App_Data\FORUM.mdf.orig" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Pages\Category.aspx" />
+    <Content Include="Pages\Departments\Business\subBusiness.aspx" />
     <Content Include="Pages\Departments\Computing\subComputing.aspx" />
     <Content Include="Pages\Departments\DepartmentSelectForum.aspx" />
+    <Content Include="Pages\Departments\Humanities\subHumanities.aspx" />
+    <Content Include="Pages\Departments\Medicine\subMedicine.aspx" />
+    <Content Include="Pages\Departments\Music\subMusic.aspx" />
     <Content Include="PostDisplay.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -383,10 +387,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903191323192_addtables.cs" />
-    <Compile Include="Migrations\201903191323192_addtables.Designer.cs">
-      <DependentUpon>201903191323192_addtables.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -398,6 +398,13 @@
     </Compile>
     <Compile Include="Pages\Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Departments\Business\subBusiness.aspx.cs">
+      <DependentUpon>subBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Departments\Business\subBusiness.aspx.designer.cs">
+      <DependentUpon>subBusiness.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Departments\Computing\subComputing.aspx.cs">
       <DependentUpon>subComputing.aspx</DependentUpon>
@@ -412,6 +419,27 @@
     </Compile>
     <Compile Include="Pages\Departments\DepartmentSelectForum.aspx.designer.cs">
       <DependentUpon>DepartmentSelectForum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Departments\Humanities\subHumanities.aspx.cs">
+      <DependentUpon>subHumanities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Departments\Humanities\subHumanities.aspx.designer.cs">
+      <DependentUpon>subHumanities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Departments\Medicine\subMedicine.aspx.cs">
+      <DependentUpon>subMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Departments\Medicine\subMedicine.aspx.designer.cs">
+      <DependentUpon>subMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Departments\Music\subMusic.aspx.cs">
+      <DependentUpon>subMusic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Departments\Music\subMusic.aspx.designer.cs">
+      <DependentUpon>subMusic.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostDisplay.aspx.cs">
       <DependentUpon>PostDisplay.aspx</DependentUpon>
@@ -449,10 +477,6 @@
     <Folder Include="App_Data\forumicons\" />
     <Folder Include="App_Data\forumuploadfiles\" />
     <Folder Include="forum\" />
-    <Folder Include="Pages\Departments\Business\" />
-    <Folder Include="Pages\Departments\Humanities\" />
-    <Folder Include="Pages\Departments\Medicine\" />
-    <Folder Include="Pages\Departments\Music\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -464,11 +488,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903191323192_addtables.resx">
-      <DependentUpon>201903191323192_addtables.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
