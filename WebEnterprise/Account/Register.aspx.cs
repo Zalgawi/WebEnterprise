@@ -26,10 +26,7 @@ namespace WebEnterprise.Account
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
-                //var currentUser = UserManager.FindByName(user.UserName);
-
-                //var roleresult = UserManager.AddToRole(currentUser.Id, "Superusers");
-
+              
 
                 manager.AddToRole(user.Id, "Staff");
 
