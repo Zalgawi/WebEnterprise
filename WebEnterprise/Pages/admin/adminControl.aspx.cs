@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,12 @@ namespace WebEnterprise.Pages.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                string strCurrentUserId = User.Identity.GetUserId();
+                Response.Redirect("/Account/Login", true);
+
+            }
 
         }
     }
