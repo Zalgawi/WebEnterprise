@@ -85,6 +85,15 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.RadioButtonList inputAnonymous;
         
         /// <summary>
+        /// inputTaC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox inputTaC;
+        
+        /// <summary>
         /// formSubmitBtn control.
         /// </summary>
         /// <remarks>

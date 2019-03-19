@@ -45,7 +45,10 @@
         <asp:ListItem Value="0" Text="No">No</asp:ListItem>
     </asp:RadioButtonList>
 
-   
+      <%-- Terms and Conditions tickbox --%>
+      <label for="inputTaC" class="col-lg-2 control-label">By ticking the following box, you are declaring that you agree to the terms and conditions:</label>
+      <asp:CheckBox ID="inputTaC" runat="server" />
+
      
       <%-- submit button --%>
     <div>

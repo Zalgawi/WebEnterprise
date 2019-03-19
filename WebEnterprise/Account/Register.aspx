@@ -39,7 +39,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="deptName" CssClass="col-md-2 control-label">Set Department</asp:Label>
             <div class="col-md-10">
-                <asp:DropDownList ID="deptName" runat="server">
+                <asp:DropDownList class="form-control" ID="deptName" runat="server" Width="279px">
                     <asp:ListItem Text="Select Department" Value="-1">Select Department</asp:ListItem>
                     <asp:ListItem Text="Computing" Value="1">Computing</asp:ListItem>
                     <asp:ListItem Text="Humanities" Value="2">Humanities</asp:ListItem>

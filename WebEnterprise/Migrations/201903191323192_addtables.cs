@@ -3,7 +3,7 @@ namespace WebEnterprise.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class start : DbMigration
+    public partial class addtables : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,8 @@ namespace WebEnterprise.Migrations
                         postId = c.Int(nullable: false),
                         Id = c.String(maxLength: 128),
                         commentBody = c.String(),
+                        commentAnonymous = c.Boolean(nullable: false),
+                        commentDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.commentId)
                 .ForeignKey("dbo.AspNetUsers", t => t.Id)
@@ -107,6 +109,7 @@ namespace WebEnterprise.Migrations
                         postCategory = c.String(),
                         postAnonymous = c.Boolean(nullable: false),
                         likeORdislike = c.Boolean(nullable: false),
+                        postDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.postId)
                 .ForeignKey("dbo.AspNetUsers", t => t.Id)

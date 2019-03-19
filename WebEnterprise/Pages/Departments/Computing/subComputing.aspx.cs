@@ -9,16 +9,33 @@ namespace WebEnterprise.Pages.Departments.Computing
 {
     public partial class subComputing : System.Web.UI.Page
     {
-        int postId = Convert.ToInt32(GridView1.Rows[GridView1.CurrentRow.Index].Cells[0].Value);
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //check for a postback
+            if (!Page.IsPostBack)
+            {
+                //bind the gridview data
+                computingPostGridView.DataSource = computingDataSource;
+                computingPostGridView.DataBind();
+            }
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void computingPostGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            Response.Redirect("PostDisplay.aspx?postId=" + )
+            //check if the row is the header row
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                //add the thead and tbody section programatically
+                e.Row.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void computingPostGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //protected void 
