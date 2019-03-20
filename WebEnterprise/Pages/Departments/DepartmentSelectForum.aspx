@@ -6,18 +6,61 @@
 
     <div  class="jumbotron">
 
-        <table class="table table-hover" align="center">
-  <thead>
-    <tr class="table-primary">
-      <th scope="col" style="width: 1593px">Departments</th>
-      <th scope="col" class="text-center">Topics</th>
-      <th scope="col" class="text-center">Posts</th>
-    </tr>
-  </thead>
+        <script src="../../../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+    
+
+
+<div  class="jumbotron">
+
+    <table class="display" id="departmentsTable">
+        <thead>
+            <tr>
+                <th>Departments</th>
+                <th>Topics</th>
+                <th>Posts</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+  <br />
+
+</div>
+<asp:HiddenField id="departmentselectId" runat="server" /> 
+ <script type="text/javascript">
+
+
+     var department = $('#departmentselectId').val();
+    $(document).ready(function () {
+        $('#departmentsTable').DataTable({
+            ajax: {
+                url: "/Pages/Departments/Computing/subComputing.aspx/GetDatatable",
+                type: "GET",
+                id: { department: department },
+                dataSrc: ""
+            },
+            columns: [
+                {data: "postTitle"},
+                {data: "postCategory"},
+                {data: "postDate"},
+                
+            ]
+        });
+    });
+</script>
+
+        <%-------------------------------------------------------------------------------------------------%>
+
   <tbody>
     <tr>
       <td style="width: 1600px">
-          <a class="TableHyperlink" href="/Pages/Departments/Computing/SubComputing" style="width:inherit">
+          <a class="TableHyperlink" href="/Pages/Departments/Computing/subComputing?Department=Computing" style="width:inherit">
               <h5>Computing</h5>
           </a>
       </td>

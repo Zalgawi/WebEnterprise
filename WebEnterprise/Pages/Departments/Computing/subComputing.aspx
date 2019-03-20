@@ -5,26 +5,48 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 
-    <script type="text/javascript">
-    $(document).ready(function () {
-        $('#<%= computingPostGridView.ClientID %>').DataTable({
-                    "pageLength": 5
-        });
-    });
-</script>
+    
 
 
 <div  class="jumbotron">
 
-    <asp:GridView class="dataTable" ID="computingPostGridView" runat="server" OnRowDataBound="computingPostGridView_RowDataBound" AutoGenerateColumns="False"  OnSelectedIndexChanged="computingPostGridView_SelectedIndexChanged">
-        <Columns>
-            <asp:BoundField DataField="postTitle" HeaderText="postTitle" SortExpression="postTitle" />
-            <asp:BoundField DataField="postCategory" HeaderText="postCategory" SortExpression="postCategory" />
-            <asp:BoundField DataField="postDate" HeaderText="postDate" SortExpression="postDate" />
-        </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="computingDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [postTitle], [postCategory], [postDate] FROM [Posts]"></asp:SqlDataSource>
+    <table class="display" id="postsTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
   <br />
 
 </div>
+<asp:HiddenField id="depId" runat="server" /> 
+ <script type="text/javascript">
+
+
+     var department = $('#depId').val();
+    $(document).ready(function () {
+        $('#postsTable').DataTable({
+            pageLength: "5",
+            ajax: {
+                url: "/Pages/Departments/Computing/subComputing.aspx/GetDatatable",
+                type: "GET",
+                id: { department: department },
+                dataSrc: ""
+            },
+            columns: [
+                {data: "postTitle"},
+                {data: "postCategory"},
+                {data: "postDate"},
+                
+            ]
+        });
+    });
+</script>
 </asp:Content>

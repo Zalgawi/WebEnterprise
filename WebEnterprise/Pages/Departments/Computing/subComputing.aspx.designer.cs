@@ -7,27 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebEnterprise.Pages.Departments.Computing {
-    
-    
-    public partial class subComputing {
-        
+namespace WebEnterprise.Pages.Departments.Computing
+{
+
+
+    public partial class subComputing
+    {
+
         /// <summary>
-        /// computingPostGridView control.
+        /// depId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView computingPostGridView;
-        
-        /// <summary>
-        /// computingDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource computingDataSource;
+        protected global::System.Web.UI.WebControls.HiddenField depId;
     }
 }

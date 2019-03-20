@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Feed" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Feed.aspx.cs" Inherits="WebEnterprise.Feed" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2 class="text-center">News Feed</h2>
+    <h2 class="text-center" style="margin-left: 40px">News Feed</h2>
     <h3 class="text-center" >You may add, view or comment on posts.</h3>
 
     <div class="jumbotron">

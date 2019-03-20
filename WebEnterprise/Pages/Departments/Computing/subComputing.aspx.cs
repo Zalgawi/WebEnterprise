@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebEnterprise.Models;
 
 namespace WebEnterprise.Pages.Departments.Computing
 {
     public partial class subComputing : System.Web.UI.Page
     {
-       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,10 +28,23 @@ namespace WebEnterprise.Pages.Departments.Computing
             if (!Page.IsPostBack)
             {
                 //bind the gridview data
-                computingPostGridView.DataSource = computingDataSource;
-                computingPostGridView.DataBind();
+                string Department = Request.QueryString["Department"];
+                depId.Value = Department;
             }
 
+        }
+
+        [WebMethod]
+        protected string GetDatatable(string department)
+        {
+            List<Post> records;
+
+            using (var _dbContext = new ApplicationDbContext())
+            {
+                records = _dbContext.Posts.Where(c => c.postCategory == department).ToList();
+            }
+
+            return JsonConvert.SerializeObject(records);
         }
 
         protected void computingPostGridView_RowDataBound(object sender, GridViewRowEventArgs e)
