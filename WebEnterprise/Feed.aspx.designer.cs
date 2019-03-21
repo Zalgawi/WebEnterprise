@@ -13,15 +13,6 @@ namespace WebEnterprise {
     public partial class Feed {
         
         /// <summary>
-        /// TitleValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator TitleValidator;
-        
-        /// <summary>
         /// inputTitle control.
         /// </summary>
         /// <remarks>
@@ -31,13 +22,13 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.TextBox inputTitle;
         
         /// <summary>
-        /// BodyValidator control.
+        /// TitleValidator0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator BodyValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TitleValidator0;
         
         /// <summary>
         /// inputBody control.
@@ -49,13 +40,13 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.TextBox inputBody;
         
         /// <summary>
-        /// categoryValidator control.
+        /// BodyValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator categoryValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator BodyValidator;
         
         /// <summary>
         /// inputCategory control.
@@ -67,13 +58,13 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.DropDownList inputCategory;
         
         /// <summary>
-        /// AnonymousValidator control.
+        /// categoryValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator AnonymousValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator categoryValidator;
         
         /// <summary>
         /// inputAnonymous control.
@@ -83,6 +74,15 @@ namespace WebEnterprise {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList inputAnonymous;
+        
+        /// <summary>
+        /// AnonymousValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AnonymousValidator;
         
         /// <summary>
         /// inputTaC control.
