@@ -8,9 +8,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using WebEnterprise.Models;
 using Microsoft.AspNet.Identity;
-
-
-
+using Microsoft.AspNet.Identity.Owin;
 
 namespace WebEnterprise
 {
@@ -29,10 +27,16 @@ namespace WebEnterprise
 
         protected void AddPost(object sender, EventArgs e)
         {
+            ApplicationUserManager _userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            ApplicationUser user = _userManager.FindByName<ApplicationUser, string>(HttpContext.Current.User.Identity.Name);
 
 
-            
-            var User = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            var department = "";
+            using (var _dbContext = new ApplicationDbContext())
+            {
+                department = _dbContext.Departments.FirstOrDefault(c => c.deptId == user.deptId).deptName;
+            }
+
             //if (Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)))
             //{
             //    User = "anonymous";
@@ -44,7 +48,8 @@ namespace WebEnterprise
                 postBody = inputBody.Text,
                 postCategory = inputCategory.SelectedValue,
                 postAnonymous = Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)),
-                Id = User,
+                Id = user.Id,
+                postDepartment = department,
                 postDate = DateTime.Now,
             };
 

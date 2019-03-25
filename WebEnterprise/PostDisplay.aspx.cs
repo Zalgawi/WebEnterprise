@@ -14,15 +14,20 @@ namespace WebEnterprise
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                       
+
+            int postId = int.Parse(Request.QueryString["postId"]);
 
 
         }
 
 
-        protected void LoadPost(int postId)
+        protected void LoadPost()
         {
-            using (var _dbContext = new ApplicationDbContext())
+
+
+            
+
+           /* using (var _dbContext = new ApplicationDbContext())
             {
                 var post = _dbContext.Posts.FirstOrDefault(c => c.postId == postId);
 
@@ -40,7 +45,7 @@ namespace WebEnterprise
 
 
                 }
-            }
+            }*/
         
 
 

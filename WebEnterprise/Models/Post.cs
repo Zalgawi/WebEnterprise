@@ -14,12 +14,12 @@ namespace WebEnterprise.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int postId { get; set; }
         // Foreign key to customer
-        [ForeignKey("ApplicationUser")]
+        
         public string Id { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        
         public string postTitle { get; set; }
         public string postBody { get; set; }
-        //public string postDescription { get; set; }
+        public string postDepartment { get; set; }
         public string postCategory { get; set; }
         public bool postAnonymous { get; set; }
         public bool likeORdislike { get; set; }

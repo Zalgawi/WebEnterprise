@@ -1,10 +1,34 @@
 ﻿<%@ Page Title="Feed" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Feed.aspx.cs" Inherits="WebEnterprise.Feed" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+     <script src="../../../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <%--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
     <h2 class="text-center" style="margin-left: 40px">News Feed</h2>
     <h3 class="text-center" >You may add, view or comment on posts.</h3>
 
-    <div class="panel panel-primary">
+    <%------MODAL BOX------%>
+
+    <!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title text-center">Submit Idea</h3>
   </div>
@@ -114,5 +138,76 @@
 
   </div>
 </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <%---------------------%>
+
+    
+    <%---------------------------------------------------------------%>
+
+    <div align="center">
+<button type="button" class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#myModal">Submit a suggestion</button>
+        </div>
+
+    <div  class="jumbotron">
+
+    <table class="display" id="postsTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+  <br />
+
+</div>
+ <asp:HiddenField id="deptName" runat="server"/>
+ <script type="text/javascript">
+
+
+     
+     $(document).ready(function () {
+         
+        $('#postsTable').DataTable({
+            pageLength: "5",
+            ajax: {
+                url: "/api/posts/GetDatatables",
+                type: "GET",
+                
+                dataType: "json",
+                dataSrc: ""
+            },
+            columns: [
+                {
+                    render: function (data, type, row, meta) {
+
+                        return '<a href="/PostDisplay/LoadPost?postId="' + row.postId + '">' + row.postTitle+'</a>';
+
+                    }
+                },
+                {data: "postCategory"},
+                {data: "postDate"},
+                
+            ]
+        });
+    });
+</script>
+
+
+
        
 </asp:Content>

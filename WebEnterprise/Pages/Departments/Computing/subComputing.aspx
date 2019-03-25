@@ -26,22 +26,30 @@
   <br />
 
 </div>
-<asp:HiddenField id="depId" runat="server" /> 
+ <asp:HiddenField id="deptName" runat="server"/>
  <script type="text/javascript">
 
 
-     var department = $('#depId').val();
-    $(document).ready(function () {
+     
+     $(document).ready(function () {
+         
         $('#postsTable').DataTable({
             pageLength: "5",
             ajax: {
-                url: "/Pages/Departments/Computing/subComputing.aspx/GetDatatable",
+                url: "/api/posts/GetDatatables",
                 type: "GET",
-                id: { department: department },
+                
+                dataType: "json",
                 dataSrc: ""
             },
             columns: [
-                {data: "postTitle"},
+                {
+                    render: function (data, type, row, meta) {
+
+                        return '<a href="/PostDisplay/LoadPost?postId="' + row.postId + '">' + row.postTitle+'</a>';
+
+                    }
+                },
                 {data: "postCategory"},
                 {data: "postDate"},
                 
