@@ -16,9 +16,12 @@
     <%------MODAL BOX------%>
 
     <!-- Trigger the modal with a button -->
+    <div align="center">
+<button type="button" class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#submitPostModal">Submit a suggestion</button>
+        </div>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="submitPostModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -42,7 +45,7 @@
 
               </td>
               <td>      
-                  <asp:RequiredFieldValidator controltovalidate="inputTitle" ID="TitleValidator0" runat="server" ErrorMessage="*Title is required" ForeColor="Red"></asp:RequiredFieldValidator>      
+                  <asp:RequiredFieldValidator controltovalidate="inputTitle" ID="TitleValidator" runat="server" ErrorMessage="*Title is required" ForeColor="Red"></asp:RequiredFieldValidator>      
 
               </td>
           </tr>
@@ -68,10 +71,10 @@
               <td style="height: 21px">&nbsp;</td>
           </tr>
           <tr>
-              <td style="width: 435px">
+              <td style="width: 435px; height: 63px;">
       
       <label for="inputCategory" class="col-lg-2 control-label">Category:</label></td>
-              <td style="width: 187px">    
+              <td style="width: 187px; height: 63px;">    
 
       <asp:DropDownList class="form-control" ID="inputCategory" runat="server" Width="270px">
           <asp:ListItem Value="Suggestion">Suggestion</asp:ListItem>
@@ -80,10 +83,26 @@
           <asp:ListItem Value="Other">Other</asp:ListItem>
       </asp:DropDownList>
 
-              </td>
-              <td><asp:RequiredFieldValidator controltovalidate="inputAnonymous" ID="categoryValidator" runat="server" ErrorMessage="*Please select a category" ForeColor="Red"></asp:RequiredFieldValidator>    
+
 
               </td>
+              <td style="height: 63px"><asp:RequiredFieldValidator controltovalidate="inputAnonymous" ID="categoryValidator" runat="server" ErrorMessage="*Please select a category" ForeColor="Red"></asp:RequiredFieldValidator>    
+
+              </td>
+          </tr>
+          <tr>
+              <td style="width: 435px; height: 21px;"></td>
+              <td style="width: 187px; height: 21px;"></td>
+              <td style="height: 21px"></td>
+          </tr>
+          <tr>
+              <td style="width: 435px; height: 21px;">
+      
+      <label for="inputFiles" class="col-lg-2 control-label">Upload file:</label></td>
+              <td style="width: 187px; height: 21px;">
+                  <asp:FileUpload ID="inputFiles" class="form-control-file" runat="server" />
+              </td>
+              <td style="height: 21px"></td>
           </tr>
           <tr>
               <td style="width: 435px">&nbsp;</td>
@@ -98,6 +117,7 @@
         <asp:ListItem Value="1" Text="Yes">Yes</asp:ListItem>
         <asp:ListItem Value="0" Text="No">No</asp:ListItem>
     </asp:RadioButtonList>
+
 
               </td>
               <td><asp:RequiredFieldValidator controltovalidate="inputAnonymous" ID="AnonymousValidator" runat="server" ErrorMessage="*Please select an option" ForeColor="Red"></asp:RequiredFieldValidator>    
@@ -138,6 +158,7 @@
 
   </div>
 </div>
+    
 
       </div>
       <div class="modal-footer">
@@ -148,14 +169,11 @@
   </div>
 </div>
 
-    <%---------------------%>
-
+    <%---------------------------------------------------------------%>
     
     <%---------------------------------------------------------------%>
 
-    <div align="center">
-<button type="button" class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#myModal">Submit a suggestion</button>
-        </div>
+    
 
     <div  class="jumbotron">
 

@@ -22,7 +22,8 @@ namespace WebEnterprise.Models
         public string postDepartment { get; set; }
         public string postCategory { get; set; }
         public bool postAnonymous { get; set; }
-        public bool likeORdislike { get; set; }
+        public int postLikes { get; set; }
+        public int postDislikes { get; set; }
         public DateTime postDate { get; set; }
    
        

@@ -22,13 +22,13 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.TextBox inputTitle;
         
         /// <summary>
-        /// TitleValidator0 control.
+        /// TitleValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator TitleValidator0;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TitleValidator;
         
         /// <summary>
         /// inputBody control.
@@ -65,6 +65,15 @@ namespace WebEnterprise {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator categoryValidator;
+        
+        /// <summary>
+        /// inputFiles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload inputFiles;
         
         /// <summary>
         /// inputAnonymous control.

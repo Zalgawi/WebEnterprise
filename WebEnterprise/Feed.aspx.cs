@@ -58,6 +58,16 @@ namespace WebEnterprise
                 _dbContext.Posts.Add(newPost);
                 _dbContext.SaveChanges();
             }
+
+            //Display success message and clear the form.
+            string message = "Your suggestion has been submitted successfully!";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "');";
+            script += "window.location = '";
+            script += Request.Url.AbsoluteUri;
+            script += "'; }";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
 
         
