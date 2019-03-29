@@ -30,7 +30,8 @@ namespace WebEnterprise.Migrations
                     new Department { deptName = "Humanities" },
                     new Department { deptName = "Music" },
                     new Department { deptName = "Medicine" },
-                    new Department { deptName = "Business" }
+                    new Department { deptName = "Business" },
+                    new Department { deptName = "Other"}
                     );
 
             //The following code adds the roles to the AspNetRoles database.
@@ -46,21 +47,21 @@ namespace WebEnterprise.Migrations
             }
 
             {
-                //try
-                //{
-                //    var passwordHash = new PasswordHasher();
-                //    string password = passwordHash.HashPassword("Anonymous@123");
-                //    context.Users.AddOrUpdate(u => u.UserName, new ApplicationUser {deptId=2, UserName = "Anonymous@Anonymous.com", PasswordHash = password, PhoneNumber = "12345678911", Email = "Anonymous@Anonymous.com" });
-                //    context.Roles.AddOrUpdate(new IdentityRole { Id = "a1f04ba5-5600-4a6e-be43-ae0d6360c0ab", Name = "Anonymous" });
-                //}
-                //catch (Exception ex)
-                //{
-                //    string message = ex.Message;
-                //    if (ex.InnerException != null)
-                //    {
-                //        string innerMessage = ex.Message;
-                //    }
-                //}
+                try
+                {
+                    var passwordHash = new PasswordHasher();
+                    string password = passwordHash.HashPassword("QAcoordinator@123");
+                    context.Users.AddOrUpdate(u => u.UserName, new ApplicationUser { deptId = 6, UserName = "QA@Coordinator.com", EmailConfirmed = true, PasswordHash = password, PhoneNumber = "12345678911", Email = "QA@Coordinator.com" });
+                   // context.Roles.AddOrUpdate(new IdentityRole { Id = "a1f04ba5-5600-4a6e-be43-ae0d6360c0ab", Name = "QAcoordinator" });
+                }
+                catch (Exception ex)
+                {
+                    string message = ex.Message;
+                    if (ex.InnerException != null)
+                    {
+                        string innerMessage = ex.Message;
+                    }
+                }
 
                 //After .AddToRole insert the ("UserId", "UserRole ");
                 //  var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));

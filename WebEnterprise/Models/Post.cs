@@ -16,7 +16,7 @@ namespace WebEnterprise.Models
         // Foreign key to customer
         
         public string Id { get; set; }
-        
+        public string Email { get; set; }
         public string postTitle { get; set; }
         public string postBody { get; set; }
         public string postDepartment { get; set; }

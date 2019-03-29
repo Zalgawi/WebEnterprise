@@ -13,7 +13,7 @@ namespace WebEnterprise
 {
     public class PostsController : ApiController
     {
-       
+        [ActionName("GetDataTables")]
         [HttpGet]
         public IHttpActionResult GetDataTables()
         {
@@ -34,6 +34,21 @@ namespace WebEnterprise
             }
 
             return Json(records);
+        }
+
+
+        [HttpGet]
+        public IHttpActionResult GetPost(string id)
+        {
+            using (var _dbContext = new ApplicationDbContext())
+            {
+                int postId = int.Parse(id);
+
+                var post = _dbContext.Posts.FirstOrDefault(c => c.postId == postId);
+
+                //var latestPosts = _dbContext.Posts.Where(c => c.Id != null).ToList().OrderByDescending(c => c.postDate == postDate);
+                return Json(post);
+            }
         }
 
     }

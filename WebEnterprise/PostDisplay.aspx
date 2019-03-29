@@ -50,5 +50,28 @@
     </div>
         </fieldset>
    </div>
+    <asp:HiddenField runat="server" ID="postIdHidden" />
+    <script>
+        $(document).ready(function () {
+            var postId = $('#<%= postIdHidden.ClientID %>').val();
+            
+            $.ajax({
+                type: "GET",
+                url: "/api/posts/GetPost",
+                data: { id: postId },
+                success: function (data) {
+                    //alert("succeeded");
+                    $('#MainContent_outputTitle').html(data.postTitle);
+                    $('#MainContent_outputId').html(data.Email);
+                    
+                    $('#MainContent_outputBody').html(data.postBody);
+                    $('#MainContent_outputCategory').html(data.postCategory);
+                },
+                error: function (data) {
+                   // alert('error: '+JSON.stringify(data));
+                },
+            })
 
+        });
+    </script>
 </asp:Content>

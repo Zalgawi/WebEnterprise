@@ -12,23 +12,35 @@ namespace WebEnterprise
 {
     public partial class PostDisplay : System.Web.UI.Page
     {
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                string strCurrentUserId = User.Identity.GetUserId();
+                Response.Redirect("/Account/Login", true);
+                
 
-            int postId = int.Parse(Request.QueryString["postId"]);
-
+            }
+            else
+            {
+                var postIdString = Request.QueryString["id"];
+                postIdHidden.Value = postIdString;
+            }
+            //  int postId = int.Parse(Request.QueryString["postId"]);
 
         }
 
 
-        protected void LoadPost()
+        protected void LoadPost(string Id)
         {
-
-
-            
-
-           /* using (var _dbContext = new ApplicationDbContext())
+           
+            //var post = "";
+            using (var _dbContext = new ApplicationDbContext())
             {
+                int postId = int.Parse(Id);
+
                 var post = _dbContext.Posts.FirstOrDefault(c => c.postId == postId);
 
                 //var latestPosts = _dbContext.Posts.Where(c => c.Id != null).ToList().OrderByDescending(c => c.postDate == postDate);
@@ -43,11 +55,8 @@ namespace WebEnterprise
                     outputBody.Text = post.postBody;
                     outputCategory.Text = post.postCategory;
 
-
                 }
-            }*/
-        
-
+            }
 
 
         }

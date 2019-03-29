@@ -9,6 +9,7 @@ using System.Configuration;
 using WebEnterprise.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using System.Web.Services.Description;
 
 namespace WebEnterprise
 {
@@ -49,6 +50,7 @@ namespace WebEnterprise
                 postCategory = inputCategory.SelectedValue,
                 postAnonymous = Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)),
                 Id = user.Id,
+                Email = user.Email,
                 postDepartment = department,
                 postDate = DateTime.Now,
             };
@@ -60,14 +62,11 @@ namespace WebEnterprise
             }
 
             //Display success message and clear the form.
-            string message = "Your suggestion has been submitted successfully!";
-            string script = "window.onload = function(){ alert('";
-            script += message;
-            script += "');";
-            script += "window.location = '";
-            script += Request.Url.AbsoluteUri;
-            script += "'; }";
-            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
+            inputTitle.Text = "";
+            inputBody.Text = "";
+            
+     
         }
 
         
