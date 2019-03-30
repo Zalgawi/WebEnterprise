@@ -36,6 +36,19 @@ namespace WebEnterprise
             return Json(records);
         }
 
+        [ActionName("GetComments")]
+        [HttpGet]
+        public IHttpActionResult GetComment(string Id)
+        {
+            using (var _dbContext = new ApplicationDbContext())
+            {
+                int postId = int.Parse(Id);
+                var comments = _dbContext.Comments.Where(c => c.postId == postId).ToList();
+
+                return Json(comments);
+            }
+        }
+
 
         [HttpGet]
         public IHttpActionResult GetPost(string id)

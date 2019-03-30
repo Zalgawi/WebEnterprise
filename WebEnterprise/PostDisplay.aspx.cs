@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -63,21 +64,34 @@ namespace WebEnterprise
 
         protected void AddComment(object sender, EventArgs e)
         {
+           
+
+            var userID = "";
+            var userEmail = "";
+
+            if(commentAnonymous.SelectedValue == "0")
+            {
+                ApplicationUserManager _userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                ApplicationUser user = _userManager.FindByName<ApplicationUser, string>(HttpContext.Current.User.Identity.Name);
+
+                userID = user.Id;
+                userEmail = user.Email;
+            }
 
 
 
-            var User = System.Web.HttpContext.Current.User.Identity.GetUserId();
-            //if (Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)))
-            //{
-            //    User = "anonymous";
-            //}
+            var postIdString = Request.QueryString["id"];
+            var postIdInt = int.Parse(postIdString);
 
             Comment newComment = new Comment()
             {
+                
                 commentBody = commentBody.Text,
                 commentAnonymous = Convert.ToBoolean(Int32.Parse(commentAnonymous.SelectedValue)),
-                Id = User,
+                Id = userID,
+                Email = userEmail,
                 commentDate = DateTime.Now,
+                postId = postIdInt
             };
 
             using (var _dbContext = new ApplicationDbContext())
@@ -85,6 +99,16 @@ namespace WebEnterprise
                 _dbContext.Comments.Add(newComment);
                 _dbContext.SaveChanges();
             }
+
+            //Display success message and clear the form.
+            commentBody.Text = "";
+            commentAnonymous.SelectedValue = "";
+
+        }
+
+        protected void commentBody_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

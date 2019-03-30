@@ -66,6 +66,7 @@
     <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -407,6 +408,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903301120462_updatedCommentsClass.cs" />
+    <Compile Include="Migrations\201903301120462_updatedCommentsClass.Designer.cs">
+      <DependentUpon>201903301120462_updatedCommentsClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903301937022_AddingEmailToComments.cs" />
+    <Compile Include="Migrations\201903301937022_AddingEmailToComments.Designer.cs">
+      <DependentUpon>201903301937022_AddingEmailToComments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -489,6 +498,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903301120462_updatedCommentsClass.resx">
+      <DependentUpon>201903301120462_updatedCommentsClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903301937022_AddingEmailToComments.resx">
+      <DependentUpon>201903301937022_AddingEmailToComments.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

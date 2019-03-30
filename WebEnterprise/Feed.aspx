@@ -177,7 +177,7 @@
 
     <div  class="jumbotron">
 
-    <table class="display" id="postsTable">
+    <table data-page-length="5" class="display" id="postsTable">
         <thead>
             <tr>
                 <th>Title</th>
@@ -202,9 +202,8 @@
          //alert("Feed page");
          $('#postsTable').DataTable({
              "bLengthChange": false,
-             pageLength: "5",
             ajax: {
-                url: "/api/posts/GetDatatables",
+                url: "/api/posts/GetDataTables",
                 type: "GET",
                 
                 dataType: "json",
@@ -212,14 +211,22 @@
             },
             columns: [
                 {
+                    render: function (data, type, row, meta)
+                    {
+                        return '<a href="/PostDisplay?id=' + row.postId.toString() + '">' + row.postTitle+'</a>';
+                    }
+                },
+
+                {data: "postCategory"},
+                {
                     render: function (data, type, row, meta) {
 
-                        return '<a href="/PostDisplay?id=' + row.postId.toString() + '">' + row.postTitle+'</a>';
+                        var date = new Date(row.postDate);
+
+                        return date.toLocaleString();           
 
                     }
                 },
-                {data: "postCategory"},
-                {data: "postDate"},
                 
             ]
         });

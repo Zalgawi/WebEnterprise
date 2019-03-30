@@ -13,14 +13,9 @@ namespace WebEnterprise.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int commentId { get; set; }
-        // Foreign key to Post
-        [ForeignKey("Post")]
         public int postId { get; set; }
-        public virtual Post Post { get; set; }
-        // Foreign key to User
-        [ForeignKey("ApplicationUser")]
         public string Id { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public string Email { get; set; }
         public string commentBody { get; set; }
         public bool commentAnonymous { get; set; }
         public DateTime commentDate { get; set; }

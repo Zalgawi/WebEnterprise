@@ -28,20 +28,30 @@ namespace WebEnterprise
 
         protected void AddPost(object sender, EventArgs e)
         {
+            
+
+            var userID = "";
+            var userEmail = "";
+            var department = "";
+
             ApplicationUserManager _userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             ApplicationUser user = _userManager.FindByName<ApplicationUser, string>(HttpContext.Current.User.Identity.Name);
 
+            if (inputAnonymous.SelectedValue == "0")
+            {
+              
 
-            var department = "";
+                userID = user.Id;
+                userEmail = user.Email;
+
+               
+            }
+
             using (var _dbContext = new ApplicationDbContext())
             {
                 department = _dbContext.Departments.FirstOrDefault(c => c.deptId == user.deptId).deptName;
             }
 
-            //if (Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)))
-            //{
-            //    User = "anonymous";
-            //}
 
             Post newPost = new Post()
             {
@@ -49,8 +59,8 @@ namespace WebEnterprise
                 postBody = inputBody.Text,
                 postCategory = inputCategory.SelectedValue,
                 postAnonymous = Convert.ToBoolean(Int32.Parse(inputAnonymous.SelectedValue)),
-                Id = user.Id,
-                Email = user.Email,
+                Id = userID,
+                Email = userEmail,
                 postDepartment = department,
                 postDate = DateTime.Now,
             };
@@ -62,9 +72,11 @@ namespace WebEnterprise
             }
 
             //Display success message and clear the form.
-
+            System.Windows.Forms.MessageBox.Show("You have successfully submitted a post!");
             inputTitle.Text = "";
             inputBody.Text = "";
+            inputCategory.SelectedValue = "";
+            inputAnonymous.SelectedValue = "";
             
      
         }

@@ -5615,7 +5615,9 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #ecf0f1;
 }
 .panel-primary {
-  border-color: #2c3e50;
+    border-color: #2c3e50;
+    border: solid;
+    border-radius: 7px;
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
@@ -7085,4 +7087,12 @@ button.close {
 
     .popover {
         color: #2c3e50;
+    }
+
+    .commentGrid {
+
+    }
+
+    .postGrid{
+
     }
