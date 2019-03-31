@@ -61,7 +61,7 @@
               <td style="height: 21px; width: 435px;">
       <label for="inputBody" class="col-lg-2 control-label">Body:</label></td>
               <td style="height: 21px; width: 187px;">    
-         <asp:TextBox Width="400px" style="resize:none;" class="form-control" ID="inputBody" runat="server" placeholder="Body" TextMode="MultiLine"></asp:TextBox>
+         <asp:TextBox Width="350px" style="resize:none;" class="form-control" ID="inputBody" runat="server" placeholder="Body" TextMode="MultiLine"></asp:TextBox>
               </td>
               <td style="height: 21px"><asp:RequiredFieldValidator controltovalidate="inputBody" ID="BodyValidator" runat="server" ErrorMessage="*Body is required" ForeColor="Red"></asp:RequiredFieldValidator>    
               </td>
