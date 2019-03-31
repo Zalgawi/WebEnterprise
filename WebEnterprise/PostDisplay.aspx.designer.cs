@@ -49,6 +49,24 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.Label outputCategory;
         
         /// <summary>
+        /// btnLike control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnLike;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Button2;
+        
+        /// <summary>
         /// commentBody control.
         /// </summary>
         /// <remarks>

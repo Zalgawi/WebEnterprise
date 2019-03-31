@@ -180,6 +180,7 @@
     <table data-page-length="5" class="display" id="postsTable">
         <thead>
             <tr>
+                <th>Likes</th>
                 <th>Title</th>
                 <th>Category</th>
                 <th>Date</th>
@@ -209,7 +210,12 @@
                 dataType: "json",
                 dataSrc: ""
             },
-            columns: [
+            columns: [  
+                {
+                    data: "postLikes",
+                    "defaultContent": "<button>Not set</button>"
+                },
+                
                 {
                     render: function (data, type, row, meta)
                     {

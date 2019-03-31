@@ -192,6 +192,8 @@
     <Content Include="App_Data\aspneforum_mysql.sql" />
     <Content Include="App_Data\FORUM.mdb" />
     <Content Include="App_Data\FORUM.mdf" />
+    <Content Include="App_Data\forumuploadfiles\thumbsdown.png" />
+    <Content Include="App_Data\forumuploadfiles\thumbsup.png" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-default.css" />
     <Content Include="Content\bootstrap.css" />
@@ -470,7 +472,6 @@
   <ItemGroup>
     <Folder Include="App_Data\forumavatars\" />
     <Folder Include="App_Data\forumicons\" />
-    <Folder Include="App_Data\forumuploadfiles\" />
     <Folder Include="forum\" />
   </ItemGroup>
   <ItemGroup>

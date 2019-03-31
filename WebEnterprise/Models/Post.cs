@@ -26,6 +26,14 @@ namespace WebEnterprise.Models
         public int postDislikes { get; set; }
         public DateTime postDate { get; set; }
    
-       
+       public void totalLikes()
+        {
+            if (postLikes != 0 || postDislikes != 0)
+            {
+                var likesORdislikesTotal = postLikes - postDislikes;
+            }
+        }
+
+
     }
 }

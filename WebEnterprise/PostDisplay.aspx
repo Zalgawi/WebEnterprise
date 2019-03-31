@@ -24,7 +24,17 @@
 
   </div>
 </div>
+        <div align="center">
+            <asp:LinkButton id="btnLike" 
+                runat="server"   
+                CssClass="btn btn-primary">
+    <span aria-hidden="true" class="glyphicon glyphicon-thumbs-up"></span>Submit
+</asp:LinkButton>
 
+     &nbsp <asp:LinkButton ID="Button2" runat="server"><span class="glyphicon glyphicon-thumbs-up"></span></asp:LinkButton>
+            
+        </div>
+    <br />
          <%--------------------------------------
           Inserting Comment Information
           --------------------------------------%>
