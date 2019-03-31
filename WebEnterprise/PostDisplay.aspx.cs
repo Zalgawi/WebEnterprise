@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebEnterprise.Models;
+using System.Web.UI.HtmlControls;
+using System.Data.SqlClient;
 
 namespace WebEnterprise
 {
@@ -109,6 +111,36 @@ namespace WebEnterprise
         protected void commentBody_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnLike_Click(object sender, EventArgs e)
+        {
+            var postIdString = Request.QueryString["id"];
+            var postIdInt = int.Parse(postIdString);
+
+           
+             using (var _dbContext = new ApplicationDbContext())
+            {
+                var addLikeSql = "update Posts set postLikes = postLikes + 1 where postID = @id";
+                var paramID = new SqlParameter("@id", postIdInt);
+                _dbContext.Database.ExecuteSqlCommand(addLikeSql, paramID);
+            }
+        }
+
+        
+
+        protected void btnDislike_Click(object sender, EventArgs e)
+        {
+            var postIdString = Request.QueryString["id"];
+            var postIdInt = int.Parse(postIdString);
+
+
+            using (var _dbContext = new ApplicationDbContext())
+            {
+                var addDisLikeikeSql = "update Posts set postDislikes = postDislikes + 1 where postID = @id";
+                var paramID = new SqlParameter("@id", postIdInt);
+                _dbContext.Database.ExecuteSqlCommand(addDisLikeikeSql, paramID);
+            }
         }
     }
 }

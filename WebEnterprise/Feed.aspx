@@ -177,7 +177,7 @@
 
     <div  class="jumbotron">
 
-    <table data-page-length="5" class="display" id="postsTable">
+    <table data-page-length="5" class="display responsive no-wrap"" id="postsTable">
         <thead>
             <tr>
                 <th>Likes</th>
@@ -203,6 +203,7 @@
          //alert("Feed page");
          $('#postsTable').DataTable({
              "bLengthChange": false,
+              responsive: true,
             ajax: {
                 url: "/api/posts/GetDataTables",
                 type: "GET",

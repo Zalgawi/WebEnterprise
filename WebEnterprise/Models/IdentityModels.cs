@@ -22,6 +22,7 @@ namespace WebEnterprise.Models
         // Foreign key to customer
         [ForeignKey("Department")]
         public int deptId { get; set; }
+        public string deptName { get; set; }
         public virtual Department Department { get; set; }
         
        

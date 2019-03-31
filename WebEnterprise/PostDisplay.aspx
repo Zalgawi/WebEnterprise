@@ -25,13 +25,8 @@
   </div>
 </div>
         <div align="center">
-            <asp:LinkButton id="btnLike" 
-                runat="server"   
-                CssClass="btn btn-primary">
-    <span aria-hidden="true" class="glyphicon glyphicon-thumbs-up"></span>Submit
-</asp:LinkButton>
-
-     &nbsp <asp:LinkButton ID="Button2" runat="server"><span class="glyphicon glyphicon-thumbs-up"></span></asp:LinkButton>
+            
+    <asp:Button ID="btnLike" class="btn btn-primary" runat="server" Text="👍 Like" Width="99.99px" CausesValidation="false"  OnClick="btnLike_Click" />&nbsp <asp:Button ID="btnDislike" CausesValidation="false" Width="99.99px" class="btn btn-primary" runat="server" Text="Dislike 👎" OnClick="btnDislike_Click"  />
             
         </div>
     <br />
@@ -47,7 +42,7 @@
   <div class="panel-body">
 
 
-
+      <fieldset>
       <table class="nav-justified">
           <tr>
               <td class="modal-sm" style="width: 237px; height: 21px;">
@@ -65,7 +60,7 @@
           <tr>
               <td style="height: 21px; width: 511px">    
       <label for="commentAnonymous" class="col-lg-2 control-label" style="left: 0px; top: 0px; width: 538px">Would you like this comment to be submitted anonymously?:</label></td>
-              <td style="height: 21px; width: 97px">    
+              <td style="height: 21px; width: 104px">    
       <asp:RadioButtonList ID="commentAnonymous" runat="server" BorderStyle="None" CellPadding="0" CellSpacing="0">
         <asp:ListItem Value="1" Text="Yes">Yes</asp:ListItem>
         <asp:ListItem Value="0" Text="No">No</asp:ListItem>
@@ -86,7 +81,22 @@
               <td>&nbsp;</td>
           </tr>
       </table>
+          </fieldset>
+                      <hr>
 
+      <table class="display" id="commentsTable">
+        <thead>
+            <tr>
+                <th>Comment</th>
+                <th>User</th>
+                <th>Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
 
 
   </div>
@@ -160,19 +170,7 @@
         });
     </script>
 
-    <table class="display" id="commentsTable">
-        <thead>
-            <tr>
-                <th>Comment</th>
-                <th>User</th>
-                <th>Date</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
+    
   <br />
 
  

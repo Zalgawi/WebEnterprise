@@ -7,13 +7,13 @@ namespace WebEnterprise.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddingEmailToComments : IMigrationMetadata
+    public sealed partial class updatedusersdep : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingEmailToComments));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedusersdep));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903301937022_AddingEmailToComments"; }
+            get { return "201903312012471_updatedusersdep"; }
         }
         
         string IMigrationMetadata.Source

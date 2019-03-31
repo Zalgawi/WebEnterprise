@@ -20,7 +20,8 @@ namespace WebEnterprise.Account
             {
                 UserName = Email.Text,
                 Email = Email.Text,
-                deptId = deptName.SelectedIndex
+                deptId = deptName.SelectedIndex,
+                deptName = deptName.SelectedItem.Text
             };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)

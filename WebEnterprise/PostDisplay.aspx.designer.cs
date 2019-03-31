@@ -55,16 +55,16 @@ namespace WebEnterprise {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLike;
+        protected global::System.Web.UI.WebControls.Button btnLike;
         
         /// <summary>
-        /// Button2 control.
+        /// btnDislike control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Button2;
+        protected global::System.Web.UI.WebControls.Button btnDislike;
         
         /// <summary>
         /// commentBody control.
