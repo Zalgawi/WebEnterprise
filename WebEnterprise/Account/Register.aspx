@@ -46,6 +46,7 @@
                     <asp:ListItem Text="Music" Value="3">Music</asp:ListItem>
                     <asp:ListItem Text="Medicine" Value="4">Medicine</asp:ListItem>
                     <asp:ListItem Text="Business" Value="5">Business</asp:ListItem>
+                    <asp:ListItem Text="Business" Value="6">Other</asp:ListItem>
                 </asp:DropDownList>                             
                                </div>            
         </div>

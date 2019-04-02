@@ -1,12 +1,10 @@
 ﻿<%@ Page Title="Feed" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Feed.aspx.cs" Inherits="WebEnterprise.Feed" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
      
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />   
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
@@ -184,6 +182,7 @@
                 <th>Title</th>
                 <th>Category</th>
                 <th>Date</th>
+                <th>Report Post</th>
                 
             </tr>
         </thead>
@@ -213,8 +212,10 @@
             },
             columns: [  
                 {
-                    data: "postLikes",
-                    "defaultContent": "<button>Not set</button>"
+                     render: function (data, type, row, meta)
+                    {
+                        return row.postLikes - row.postDislikes;
+                    }
                 },
                 
                 {
@@ -234,10 +235,36 @@
 
                     }
                 },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        return '<button  onClick="reportPost('+row.postId+')" onClientClick="return false;">Report Post</button>';
+                    }
+                },
+                
                 
             ]
         });
-    });
+     });
+
+
+     function reportPost(postId)
+     {
+         postString = postId.toString();
+
+         $.ajax({
+             type: "GET",
+             url: "/api/posts/ReportPost",
+             dataType: "json",
+             data: { postId: postString },
+             success: function () {
+                 alert("Post reported");
+             },
+             error: function (data) {
+                 alert("Report failed: " + data.reponseText);
+             }
+         })
+     }
 </script>
 
 

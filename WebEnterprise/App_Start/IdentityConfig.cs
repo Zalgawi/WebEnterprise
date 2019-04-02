@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using WebEnterprise;
 using WebEnterprise.Models;
 
 namespace WebEnterprise
@@ -24,6 +25,7 @@ namespace WebEnterprise
             return Task.Factory.StartNew(() =>
             {
                 sendMail(message);
+                
             });
         }
 
@@ -49,7 +51,10 @@ namespace WebEnterprise
             smtpClient.EnableSsl = true;
             smtpClient.Send(msg);
         }
+
+        
     }
+}
 
     public class SmsService : IIdentityMessageService
     {
@@ -135,4 +140,4 @@ namespace WebEnterprise
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
-}
+

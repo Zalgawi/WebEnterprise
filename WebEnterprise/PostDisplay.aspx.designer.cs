@@ -58,6 +58,15 @@ namespace WebEnterprise {
         protected global::System.Web.UI.WebControls.Button btnLike;
         
         /// <summary>
+        /// btnUnlike control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUnlike;
+        
+        /// <summary>
         /// btnDislike control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace WebEnterprise {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDislike;
+        
+        /// <summary>
+        /// btnUndislike control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUndislike;
         
         /// <summary>
         /// commentBody control.

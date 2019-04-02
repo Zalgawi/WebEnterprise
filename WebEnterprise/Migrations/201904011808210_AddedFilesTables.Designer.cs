@@ -7,13 +7,13 @@ namespace WebEnterprise.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class updatedusersdep : IMigrationMetadata
+    public sealed partial class AddedFilesTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedusersdep));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedFilesTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903312012471_updatedusersdep"; }
+            get { return "201904011808210_AddedFilesTables"; }
         }
         
         string IMigrationMetadata.Source

@@ -192,8 +192,6 @@
     <Content Include="App_Data\aspneforum_mysql.sql" />
     <Content Include="App_Data\FORUM.mdb" />
     <Content Include="App_Data\FORUM.mdf" />
-    <Content Include="App_Data\forumuploadfiles\thumbsdown.png" />
-    <Content Include="App_Data\forumuploadfiles\thumbsup.png" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-default.css" />
     <Content Include="Content\bootstrap.css" />
@@ -410,15 +408,43 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903312012471_updatedusersdep.cs" />
-    <Compile Include="Migrations\201903312012471_updatedusersdep.Designer.cs">
-      <DependentUpon>201903312012471_updatedusersdep.cs</DependentUpon>
+    <Compile Include="Migrations\201904011613144_addedalldpusers.cs" />
+    <Compile Include="Migrations\201904011613144_addedalldpusers.Designer.cs">
+      <DependentUpon>201904011613144_addedalldpusers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904011615304_addedtoroles.cs" />
+    <Compile Include="Migrations\201904011615304_addedtoroles.Designer.cs">
+      <DependentUpon>201904011615304_addedtoroles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904011617220_addedroles.cs" />
+    <Compile Include="Migrations\201904011617220_addedroles.Designer.cs">
+      <DependentUpon>201904011617220_addedroles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904011622523_update1.cs" />
+    <Compile Include="Migrations\201904011622523_update1.Designer.cs">
+      <DependentUpon>201904011622523_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904011808210_AddedFilesTables.cs" />
+    <Compile Include="Migrations\201904011808210_AddedFilesTables.Designer.cs">
+      <DependentUpon>201904011808210_AddedFilesTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904012350435_update.cs" />
+    <Compile Include="Migrations\201904012350435_update.Designer.cs">
+      <DependentUpon>201904012350435_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904012353395_updateagin.cs" />
+    <Compile Include="Migrations\201904012353395_updateagin.Designer.cs">
+      <DependentUpon>201904012353395_updateagin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\NewFile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\postAttatchment.cs" />
+    <Compile Include="Models\PostImageAjaxModel.cs" />
     <Compile Include="Pages\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -468,6 +494,7 @@
   <ItemGroup>
     <Folder Include="App_Data\forumavatars\" />
     <Folder Include="App_Data\forumicons\" />
+    <Folder Include="App_Data\forumuploadfiles\" />
     <Folder Include="forum\" />
   </ItemGroup>
   <ItemGroup>
@@ -497,8 +524,26 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903312012471_updatedusersdep.resx">
-      <DependentUpon>201903312012471_updatedusersdep.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904011613144_addedalldpusers.resx">
+      <DependentUpon>201904011613144_addedalldpusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904011615304_addedtoroles.resx">
+      <DependentUpon>201904011615304_addedtoroles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904011617220_addedroles.resx">
+      <DependentUpon>201904011617220_addedroles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904011622523_update1.resx">
+      <DependentUpon>201904011622523_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904011808210_AddedFilesTables.resx">
+      <DependentUpon>201904011808210_AddedFilesTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904012350435_update.resx">
+      <DependentUpon>201904012350435_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904012353395_updateagin.resx">
+      <DependentUpon>201904012353395_updateagin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

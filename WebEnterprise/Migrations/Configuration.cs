@@ -22,9 +22,6 @@ namespace WebEnterprise.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-
-
-
             context.Departments.AddOrUpdate(r => r.deptName,
                     new Department { deptName = "Computing" },
                     new Department { deptName = "Humanities" },
@@ -36,7 +33,7 @@ namespace WebEnterprise.Migrations
 
             //The following code adds the roles to the AspNetRoles database.
             var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            string[] roleNames = { "Admin", "QACoordinator", "QAManager", "Staff" };
+            string[] roleNames = {"QACoordinator", "QAManager", "Staff" };
             IdentityResult roleResult;
             foreach (var roleName in roleNames)
             {
@@ -49,10 +46,14 @@ namespace WebEnterprise.Migrations
             {
                 try
                 {
-                    var passwordHash = new PasswordHasher();
-                    string password = passwordHash.HashPassword("QAcoordinator@123");
-                    context.Users.AddOrUpdate(u => u.UserName, new ApplicationUser { deptId = 6, UserName = "QA@Coordinator.com", EmailConfirmed = true, PasswordHash = password, PhoneNumber = "12345678911", Email = "QA@Coordinator.com" });
-                   // context.Roles.AddOrUpdate(new IdentityRole { Id = "a1f04ba5-5600-4a6e-be43-ae0d6360c0ab", Name = "QAcoordinator" });
+                    //var passwordHash = new PasswordHasher();
+                    //string password6 = passwordHash.HashPassword("QAmanager@6");
+                    //context.Users.AddOrUpdate(u => u.UserName, new ApplicationUser {Id = "87ax99c7-bde5-4875-aaf1-bc0a96e9f24f", deptId = 6, deptName = "Other", UserName = "QA@Manager.com", EmailConfirmed = true, PasswordHash = password6, Email = "QA@Manager.com" });
+                                       
+                    ////After .AddToRole insert the ("UserId", "UserRole ");
+                    var UserManager1 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                    UserManager1.AddToRole("87cd99c7-bde5-4875-aaf1-bc0a96e9f24f", "QAManager");                   
+
                 }
                 catch (Exception ex)
                 {
@@ -61,11 +62,7 @@ namespace WebEnterprise.Migrations
                     {
                         string innerMessage = ex.Message;
                     }
-                }
-
-                //After .AddToRole insert the ("UserId", "UserRole ");
-                //  var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-                //  UserManager.AddToRole("c1d97ec4-91e8-4ab9-975f-952ede444a7f", "Admin");
+                }                              
 
             }
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PostDisplay.aspx.cs" Inherits="WebEnterprise.PostDisplay" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PostDisplay.aspx.cs" Inherits="WebEnterprise.PostDisplay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,13 +21,15 @@
 <div id="outputBodyContainer" class="text-center"><asp:Label class="label label-primary" ID="outputBody" runat="server" style="font-size: medium"></asp:Label></div>
         <hr>
         <div id="outputCategoryContainer" class="text-center"><asp:Label class="label label-primary" ID="outputCategory" runat="server" style="font-size: x-small"></asp:Label></div> 
-
+     <hr>
+      <div id="imagesContainer" class="text-center"></div>
   </div>
 </div>
         <div align="center">
             
-    <asp:Button ID="btnLike" class="btn btn-primary" runat="server" Text="👍 Like" Width="99.99px" CausesValidation="false"  OnClick="btnLike_Click" />&nbsp <asp:Button ID="btnDislike" CausesValidation="false" Width="99.99px" class="btn btn-primary" runat="server" Text="Dislike 👎" OnClick="btnDislike_Click"  />
-            
+    <asp:Button ID="btnLike" class="btn btn-primary" runat="server" Text="👍 Like" Width="99.99px" CausesValidation="false"  OnClick="btnLike_Click" />&nbsp <asp:Button ID="btnUnlike" visible="false" Enabled="false" Text="👍 UnLike" class="btn btn-primary" runat="server" CausesValidation="false" OnClick="btnUnlike_Click" />
+    <br />
+    <asp:Button ID="btnDislike" CausesValidation="false" Width="99.99px" class="btn btn-primary" runat="server" Text="Dislike 👎" OnClick="btnDislike_Click"  />&nbsp<asp:Button ID="btnUndislike" Enabled="false" visible="false" class="btn btn-primary" Text="UnDislike 👎" CausesValidation="false" runat="server" OnClick="btnUndislike_Click" />
         </div>
     <br />
          <%--------------------------------------
@@ -114,17 +116,28 @@
                 data: { id: postId },
                 success: function (data) {
                     //alert("succeeded");
-                    $('#MainContent_outputTitle').html(data.postTitle);
+                    $('#MainContent_outputTitle').html(data.post.postTitle);
 
                     var email = "Anonymous User";
-                    if (data.Email != "") {
+                    if (data.post.Email != "") {
                         email = data.Email;
                     }
                     
-                    $('#MainContent_outputId').html(data.Email);
+                    $('#MainContent_outputId').html(data.post.Email);
 
-                    $('#MainContent_outputBody').html(data.postBody);
-                    $('#MainContent_outputCategory').html(data.postCategory);
+                    $('#MainContent_outputBody').html(data.post.postBody);
+                    $('#MainContent_outputCategory').html(data.post.postCategory);
+
+                    var imageContainer = $('#imagesContainer');
+
+                    if (data.images != null)
+                    {
+                        data.images.forEach(function(image) {
+
+                            imageContainer.append('<p><img src="'+image.filePath+'"/></p><br/>')
+
+                                                 });
+                    }
                 },
                 error: function (data) {
                     // alert('error: '+JSON.stringify(data));
