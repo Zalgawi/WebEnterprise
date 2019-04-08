@@ -174,6 +174,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\admin.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Lockout.aspx" />
@@ -182,12 +183,16 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\QACoordinator.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\Post.aspx" />
+    <Content Include="Admin\Report.aspx" />
+    <Content Include="Admin\WebForm1.aspx" />
     <Content Include="App_Data\aspneforum_MSsql.sql" />
     <Content Include="App_Data\aspneforum_mysql.sql" />
     <Content Include="App_Data\FORUM.mdb" />
@@ -203,6 +208,13 @@
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
     <Content Include="App_Data\FORUM.mdf.orig" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\download1.png" />
+    <Content Include="Images\footer.png" />
+    <Content Include="Images\google-magnifying-glass-icon-9.jpg" />
+    <Content Include="Images\iconnn.jpg" />
+    <Content Include="Images\post.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -275,6 +287,13 @@
     <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Confirm.aspx.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -331,6 +350,13 @@
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Account\QACoordinator.aspx.cs">
+      <DependentUpon>QACoordinator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\QACoordinator.aspx.designer.cs">
+      <DependentUpon>QACoordinator.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,6 +398,27 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Post.aspx.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Post.aspx.designer.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -435,6 +482,22 @@
     <Compile Include="Migrations\201904012353395_updateagin.cs" />
     <Compile Include="Migrations\201904012353395_updateagin.Designer.cs">
       <DependentUpon>201904012353395_updateagin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904082055419_addedCategorycs.cs" />
+    <Compile Include="Migrations\201904082055419_addedCategorycs.Designer.cs">
+      <DependentUpon>201904082055419_addedCategorycs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904082117535_addedcategory.cs" />
+    <Compile Include="Migrations\201904082117535_addedcategory.Designer.cs">
+      <DependentUpon>201904082117535_addedcategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904082238198_addedcatg.cs" />
+    <Compile Include="Migrations\201904082238198_addedcatg.Designer.cs">
+      <DependentUpon>201904082238198_addedcatg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904082244040_addedcatggg.cs" />
+    <Compile Include="Migrations\201904082244040_addedcatggg.Designer.cs">
+      <DependentUpon>201904082244040_addedcatggg.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -544,6 +607,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904012353395_updateagin.resx">
       <DependentUpon>201904012353395_updateagin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904082055419_addedCategorycs.resx">
+      <DependentUpon>201904082055419_addedCategorycs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904082117535_addedcategory.resx">
+      <DependentUpon>201904082117535_addedcategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904082238198_addedcatg.resx">
+      <DependentUpon>201904082238198_addedcatg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904082244040_addedcatggg.resx">
+      <DependentUpon>201904082244040_addedcatggg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

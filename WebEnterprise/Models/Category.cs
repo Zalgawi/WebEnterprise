@@ -9,11 +9,10 @@ namespace WebEnterprise.Models
 {
     public class Category
     {
-        //The Department ID
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int catId { get; set; }
         public string catName { get; set; }
-
     }
 }

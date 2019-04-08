@@ -50,6 +50,7 @@ namespace WebEnterprise.Models
         public DbSet<Comment> Comments { get; set; }    
         public DbSet<Department> Departments { get; set; }
         public DbSet<NewFile> Files { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
 
         public ApplicationDbContext()
